@@ -1,0 +1,2643 @@
+{
+  "total_value": 91451.3002281189,
+  "n_training": 255,
+  "n_clusters": 15,
+  "n_positions": 28,
+  "knn_k": 3,
+  "sigma": 0.6591012313448892,
+  "date_range": "2021-07-29 to 2026-02-20",
+  "max_weight": 0.15,
+  "positions": [
+    {
+      "ticker": "GOOG",
+      "name": "Alphabet",
+      "shares": 42,
+      "price": 314.8999938964844,
+      "current_value": 13225.799743652344,
+      "current_weight": 0.14462123240086808,
+      "hrp_weight": 0.012838274158592237,
+      "target_value": 1174.0768644883192,
+      "trade": -12051.722879164025,
+      "cluster": 1,
+      "cluster_label": "SaaS / Growth / Internet/Tech",
+      "vol": 0.3090086627958763,
+      "method": "direct"
+    },
+    {
+      "ticker": "AMZN",
+      "name": "Amazon",
+      "shares": 22,
+      "price": 210.1100006103516,
+      "current_value": 4622.420013427735,
+      "current_weight": 0.05054515356148497,
+      "hrp_weight": 0.009613913688346704,
+      "target_value": 879.2049070802163,
+      "trade": -3743.215106347519,
+      "cluster": 1,
+      "cluster_label": "SaaS / Growth / Internet/Tech",
+      "vol": 0.35708685893670455,
+      "method": "direct"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "Nvidia",
+      "shares": 18,
+      "price": 189.82000732421875,
+      "current_value": 3416.7601318359375,
+      "current_weight": 0.037361526006880905,
+      "hrp_weight": 0.007681051505339252,
+      "target_value": 702.4421472824245,
+      "trade": -2714.3179845535133,
+      "cluster": 15,
+      "cluster_label": "Mega Cap Tech / Tech/Semis",
+      "vol": 0.5169872849587975,
+      "method": "direct"
+    },
+    {
+      "ticker": "META",
+      "name": "Meta Platforms",
+      "shares": 5,
+      "price": 655.6599731445312,
+      "current_value": 3278.2998657226562,
+      "current_weight": 0.03584749322913032,
+      "hrp_weight": 0.007303911602023679,
+      "target_value": 667.9522127563083,
+      "trade": -2610.347652966348,
+      "cluster": 1,
+      "cluster_label": "SaaS / Growth / Internet/Tech",
+      "vol": 0.4450599210824991,
+      "method": "direct"
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft",
+      "shares": 7,
+      "price": 397.2300109863281,
+      "current_value": 2780.610076904297,
+      "current_weight": 0.030405364056806834,
+      "hrp_weight": 0.023631242821715123,
+      "target_value": 2161.1078820522494,
+      "trade": -619.5021948520475,
+      "cluster": 1,
+      "cluster_label": "SaaS / Growth / Internet/Tech",
+      "vol": 0.26303206041970884,
+      "method": "direct"
+    },
+    {
+      "ticker": "TSM",
+      "name": "Taiwan Semi",
+      "shares": 10,
+      "price": 370.5400085449219,
+      "current_value": 3705.4000854492188,
+      "current_weight": 0.04051774087636104,
+      "hrp_weight": 0.01078543781928499,
+      "target_value": 986.3423121031396,
+      "trade": -2719.057773346079,
+      "cluster": 15,
+      "cluster_label": "Mega Cap Tech / Tech/Semis",
+      "vol": 0.3662497619548251,
+      "method": "direct"
+    },
+    {
+      "ticker": "ZETA",
+      "name": "Zeta Global",
+      "shares": 275,
+      "price": 16.309999465942383,
+      "current_value": 4485.249853134155,
+      "current_weight": 0.049045227809183814,
+      "hrp_weight": 0.003133441664123297,
+      "target_value": 286.55731437303615,
+      "trade": -4198.692538761119,
+      "cluster": 1,
+      "cluster_label": "SaaS / Growth / Internet/Tech",
+      "vol": 0.7223391627532296,
+      "method": "direct"
+    },
+    {
+      "ticker": "SHOP",
+      "name": "Shopify",
+      "shares": 20,
+      "price": 126.1999969482422,
+      "current_value": 2523.999938964844,
+      "current_weight": 0.027599388228148777,
+      "hrp_weight": 0.004329945237283035,
+      "target_value": 395.97912186608437,
+      "trade": -2128.02081709876,
+      "cluster": 1,
+      "cluster_label": "SaaS / Growth / Internet/Tech",
+      "vol": 0.6500982051853519,
+      "method": "direct"
+    },
+    {
+      "ticker": "UBER",
+      "name": "Uber",
+      "shares": 41,
+      "price": 73.86000061035156,
+      "current_value": 3028.260025024414,
+      "current_weight": 0.03311336216620901,
+      "hrp_weight": 0.042602740018970776,
+      "target_value": 3896.0759680153924,
+      "trade": 867.8159429909783,
+      "cluster": 1,
+      "cluster_label": "SaaS / Growth / Internet/Tech",
+      "vol": 0.44804037627059135,
+      "method": "direct"
+    },
+    {
+      "ticker": "HOOD",
+      "name": "Robinhood",
+      "shares": 50,
+      "price": 76.11000061035156,
+      "current_value": 3805.500030517578,
+      "current_weight": 0.04161231191929501,
+      "hrp_weight": 0.003266097513292888,
+      "target_value": 298.68886426246047,
+      "trade": -3506.8111662551178,
+      "cluster": 12,
+      "cluster_label": "Fintech / Crypto / Industrials",
+      "vol": 0.7175003805456014,
+      "method": "direct"
+    },
+    {
+      "ticker": "COIN",
+      "name": "Coinbase",
+      "shares": 5,
+      "price": 171.35000610351562,
+      "current_value": 856.7500305175781,
+      "current_weight": 0.009368374516059092,
+      "hrp_weight": 0.002298502361442581,
+      "target_value": 210.20102953132576,
+      "trade": -646.5490009862524,
+      "cluster": 12,
+      "cluster_label": "Fintech / Crypto / Industrials",
+      "vol": 0.8552916499195449,
+      "method": "direct"
+    },
+    {
+      "ticker": "JPM",
+      "name": "JP Morgan",
+      "shares": 21,
+      "price": 310.7900085449219,
+      "current_value": 6526.590179443359,
+      "current_weight": 0.07136683855957471,
+      "hrp_weight": 0.04282679944873864,
+      "target_value": 3916.5664941960345,
+      "trade": -2610.023685247325,
+      "cluster": 4,
+      "cluster_label": "Trad Financials",
+      "vol": 0.24207519697025542,
+      "method": "direct"
+    },
+    {
+      "ticker": "BRK-B",
+      "name": "Berkshire Hathaway",
+      "shares": 7,
+      "price": 498.2000122070313,
+      "current_value": 3487.400085449219,
+      "current_weight": 0.038133958475714866,
+      "hrp_weight": 0.08679840346743355,
+      "target_value": 7937.826854821661,
+      "trade": 4450.426769372441,
+      "cluster": 4,
+      "cluster_label": "Trad Financials",
+      "vol": 0.1700404459362214,
+      "method": "direct"
+    },
+    {
+      "ticker": "MKL",
+      "name": "Markel",
+      "shares": 1,
+      "price": 2082.199951171875,
+      "current_value": 2082.199951171875,
+      "current_weight": 0.022768401826742456,
+      "hrp_weight": 0.06600947973837859,
+      "target_value": 6036.652749456392,
+      "trade": 3954.4527982845166,
+      "cluster": 4,
+      "cluster_label": "Trad Financials",
+      "vol": 0.2216429332709566,
+      "method": "direct"
+    },
+    {
+      "ticker": "IBKR",
+      "name": "Interactive Brokers",
+      "shares": 25,
+      "price": 74.4000015258789,
+      "current_value": 1860.0000381469727,
+      "current_weight": 0.020338694294201747,
+      "hrp_weight": 0.023250712108138304,
+      "target_value": 2126.307853518915,
+      "trade": 266.3078153719425,
+      "cluster": 13,
+      "cluster_label": "Aerospace/Def / Industrials",
+      "vol": 0.3395916331338237,
+      "method": "direct"
+    },
+    {
+      "ticker": "EFX",
+      "name": "Equifax",
+      "shares": 10,
+      "price": 197.4600067138672,
+      "current_value": 1974.6000671386719,
+      "current_weight": 0.021591820588807042,
+      "hrp_weight": 0.015096589494312172,
+      "target_value": 1380.602738265008,
+      "trade": -593.997328873664,
+      "cluster": 1,
+      "cluster_label": "SaaS / Growth / Internet/Tech",
+      "vol": 0.32943944024931104,
+      "method": "direct"
+    },
+    {
+      "ticker": "JNJ",
+      "name": "Johnson & Johnson",
+      "shares": 18,
+      "price": 242.4900054931641,
+      "current_value": 4364.820098876954,
+      "current_weight": 0.04772835474169546,
+      "hrp_weight": 0.15000000000016409,
+      "target_value": 13717.69503423284,
+      "trade": 9352.874935355885,
+      "cluster": 14,
+      "cluster_label": "Consumer / Healthcare",
+      "vol": 0.16699612058864433,
+      "method": "direct"
+    },
+    {
+      "ticker": "UNH",
+      "name": "United Health",
+      "shares": 5,
+      "price": 290.0,
+      "current_value": 1450.0,
+      "current_weight": 0.015855433398793414,
+      "hrp_weight": 0.04681141280705339,
+      "target_value": 4280.964566720249,
+      "trade": 2830.9645667202494,
+      "cluster": 13,
+      "cluster_label": "Aerospace/Def / Industrials",
+      "vol": 0.3263760438407927,
+      "method": "direct"
+    },
+    {
+      "ticker": "HDB",
+      "name": "HDFC Bank",
+      "shares": 54,
+      "price": 33.09000015258789,
+      "current_value": 1786.860008239746,
+      "current_weight": 0.019538924036974305,
+      "hrp_weight": 0.0731178975904589,
+      "target_value": 6686.726804593909,
+      "trade": 4899.866796354163,
+      "cluster": 10,
+      "cluster_label": "Banks / Luxury",
+      "vol": 0.2611453520360522,
+      "method": "direct"
+    },
+    {
+      "ticker": "IBN",
+      "name": "ICICI Bank",
+      "shares": 59,
+      "price": 30.920000076293945,
+      "current_value": 1824.2800045013428,
+      "current_weight": 0.019948103525601096,
+      "hrp_weight": 0.06029879970971379,
+      "target_value": 5514.403635648244,
+      "trade": 3690.123631146901,
+      "cluster": 1,
+      "cluster_label": "SaaS / Growth / Internet/Tech",
+      "vol": 0.23190104749241802,
+      "method": "direct"
+    },
+    {
+      "ticker": "KWEB",
+      "name": "China Internet ETF",
+      "shares": 91,
+      "price": 32.70000076293945,
+      "current_value": 2975.7000694274902,
+      "current_weight": 0.032538630527994834,
+      "hrp_weight": 0.008436579601835343,
+      "target_value": 771.5361740658677,
+      "trade": -2204.1638953616225,
+      "cluster": 1,
+      "cluster_label": "SaaS / Growth / Internet/Tech",
+      "vol": 0.46573294976986945,
+      "method": "direct"
+    },
+    {
+      "ticker": "NE",
+      "name": "Noble Corp",
+      "shares": 19,
+      "price": 45.52000045776367,
+      "current_value": 864.8800086975098,
+      "current_weight": 0.009457274052311195,
+      "hrp_weight": 0.031993073339976405,
+      "target_value": 2925.808155234409,
+      "trade": 2060.928146536899,
+      "cluster": 11,
+      "cluster_label": "Energy Svcs / Energy",
+      "vol": 0.4356519823765338,
+      "method": "direct"
+    },
+    {
+      "ticker": "HCC",
+      "name": "Warrior Met Coal",
+      "shares": 8,
+      "price": 85.01000213623047,
+      "current_value": 680.0800170898438,
+      "current_weight": 0.0074365264943574505,
+      "hrp_weight": 0.021977339131265893,
+      "target_value": 2009.856239108583,
+      "trade": 1329.7762220187392,
+      "cluster": 11,
+      "cluster_label": "Energy Svcs / Energy",
+      "vol": 0.4787858586859232,
+      "method": "direct"
+    },
+    {
+      "ticker": "AMR",
+      "name": "Alpha Metallurgical",
+      "shares": 3,
+      "price": 175.60000610351562,
+      "current_value": 526.8000183105469,
+      "current_weight": 0.005760443175728294,
+      "hrp_weight": 0.014920931300487546,
+      "target_value": 1364.5385680440231,
+      "trade": 837.7385497334762,
+      "cluster": 11,
+      "cluster_label": "Energy Svcs / Energy",
+      "vol": 0.5810732784693413,
+      "method": "direct"
+    },
+    {
+      "ticker": "VAL",
+      "name": "Valaris",
+      "shares": 10,
+      "price": 95.75,
+      "current_value": 957.5,
+      "current_weight": 0.010470053434030823,
+      "hrp_weight": 0.04207303144332773,
+      "target_value": 3847.633430030851,
+      "trade": 2890.133430030851,
+      "cluster": 11,
+      "cluster_label": "Energy Svcs / Energy",
+      "vol": 0.4851424473608989,
+      "method": "direct"
+    },
+    {
+      "ticker": "TDW",
+      "name": "TideWater",
+      "shares": 9,
+      "price": 73.37999725341797,
+      "current_value": 660.4199752807617,
+      "current_weight": 0.007221548229859938,
+      "hrp_weight": 0.02166531169322374,
+      "target_value": 1981.320924192779,
+      "trade": 1320.9009489120174,
+      "cluster": 11,
+      "cluster_label": "Energy Svcs / Energy",
+      "vol": 0.5294015452500751,
+      "method": "direct"
+    },
+    {
+      "ticker": "BN",
+      "name": "Brookfield Corp",
+      "shares": 154,
+      "price": 45.97999954223633,
+      "current_value": 7080.9199295043945,
+      "current_weight": 0.07742831334099716,
+      "hrp_weight": 0.017239080734913172,
+      "target_value": 1576.5363479453251,
+      "trade": -5504.383581559069,
+      "cluster": 1,
+      "cluster_label": "SaaS / Growth / Internet/Tech",
+      "vol": 0.30828895279270735,
+      "method": "direct"
+    },
+    {
+      "ticker": "SHV",
+      "name": "Blackrock T-Bill",
+      "shares": 60,
+      "price": 110.31999969482422,
+      "current_value": 6619.199981689453,
+      "current_weight": 0.07237950652618738,
+      "hrp_weight": 0.15000000000016409,
+      "target_value": 13717.69503423284,
+      "trade": 7098.495052543387,
+      "cluster": 2,
+      "cluster_label": "REITs / Utilities",
+      "vol": 0.0029443289807674993,
+      "method": "direct"
+    }
+  ],
+  "clusters": [
+    {
+      "id": 1,
+      "size": 54,
+      "label": "SaaS / Growth / Internet/Tech",
+      "markets": {
+        "US": 34,
+        "China": 16,
+        "EU": 3,
+        "India": 1
+      },
+      "sectors": {
+        "SaaS / Growth": 12,
+        "Internet/Tech": 10,
+        "Mega Cap Tech": 9,
+        "SmallMid Growth": 7,
+        "Other": 4,
+        "EV/Auto": 3,
+        "Trad Financials": 2,
+        "Tech/Semis": 2,
+        "Aerospace/Def": 1,
+        "REITs/Infra": 1,
+        "Industrials": 1,
+        "Biotech": 1,
+        "Banks": 1
+      },
+      "tickers": [
+        "AAPL",
+        "ABNB",
+        "ADBE",
+        "AMZN",
+        "AXON",
+        "BABA",
+        "BIDU",
+        "BILI",
+        "BILL",
+        "BLK",
+        "BN",
+        "CARR",
+        "CRM",
+        "CRWD",
+        "CSCO",
+        "DDOG",
+        "EFX",
+        "EXAS",
+        "FUTU",
+        "GLBE",
+        "GOOG",
+        "HUBS",
+        "IBN",
+        "JD",
+        "KWEB",
+        "LI",
+        "META",
+        "MNSO",
+        "MSFT",
+        "NET",
+        "NIO",
+        "NOW",
+        "NTES",
+        "ORCL",
+        "PANW",
+        "PATH",
+        "PDD",
+        "PYPL",
+        "RBLX",
+        "RELX",
+        "SAP",
+        "SHOP",
+        "SNOW",
+        "SPOT",
+        "TAL",
+        "TME",
+        "UBER",
+        "VEEV",
+        "WDAY",
+        "XPEV",
+        "YUMC",
+        "ZETA",
+        "ZS",
+        "ZTO"
+      ]
+    },
+    {
+      "id": 2,
+      "size": 16,
+      "label": "REITs / Utilities",
+      "markets": {
+        "US": 16
+      },
+      "sectors": {
+        "REITs": 7,
+        "Utilities": 6,
+        "Industrials": 2,
+        "Fixed Income": 1
+      },
+      "tickers": [
+        "AEP",
+        "AMT",
+        "DLR",
+        "DUK",
+        "EQIX",
+        "NEE",
+        "O",
+        "PLD",
+        "PSA",
+        "RSG",
+        "SHV",
+        "SO",
+        "SPG",
+        "SRE",
+        "WM",
+        "XEL"
+      ]
+    },
+    {
+      "id": 4,
+      "size": 17,
+      "label": "Trad Financials",
+      "markets": {
+        "US": 17
+      },
+      "sectors": {
+        "Trad Financials": 17
+      },
+      "tickers": [
+        "AIG",
+        "ALL",
+        "BAC",
+        "BRK-B",
+        "C",
+        "CB",
+        "COF",
+        "GS",
+        "JPM",
+        "MET",
+        "MKL",
+        "MS",
+        "PNC",
+        "PRU",
+        "SCHW",
+        "USB",
+        "WFC"
+      ]
+    },
+    {
+      "id": 10,
+      "size": 15,
+      "label": "Banks / Luxury",
+      "markets": {
+        "EU": 14,
+        "India": 1
+      },
+      "sectors": {
+        "Banks": 7,
+        "Luxury": 3,
+        "Tech/Semis": 2,
+        "Materials": 1,
+        "Pharma": 1,
+        "Industrials": 1
+      },
+      "tickers": [
+        "BASFY",
+        "BAYRY",
+        "BBVA",
+        "DB",
+        "ERIC",
+        "HDB",
+        "HESAY",
+        "HSBC",
+        "ING",
+        "LVMUY",
+        "NOK",
+        "PPRUY",
+        "SAN",
+        "SIEGY",
+        "UBS"
+      ]
+    },
+    {
+      "id": 11,
+      "size": 7,
+      "label": "Energy Svcs / Energy",
+      "markets": {
+        "US": 6,
+        "EU": 1
+      },
+      "sectors": {
+        "Energy Svcs": 6,
+        "Energy": 1
+      },
+      "tickers": [
+        "AMR",
+        "BTU",
+        "HCC",
+        "NE",
+        "TDW",
+        "TTE",
+        "VAL"
+      ]
+    },
+    {
+      "id": 12,
+      "size": 8,
+      "label": "Fintech / Crypto / Industrials",
+      "markets": {
+        "US": 8
+      },
+      "sectors": {
+        "Fintech / Crypto": 6,
+        "Industrials": 1,
+        "SaaS / Growth": 1
+      },
+      "tickers": [
+        "AFRM",
+        "COIN",
+        "GNRC",
+        "HOOD",
+        "MARA",
+        "PLTR",
+        "RIOT",
+        "SOFI"
+      ]
+    },
+    {
+      "id": 13,
+      "size": 15,
+      "label": "Aerospace/Def / Industrials",
+      "markets": {
+        "US": 15
+      },
+      "sectors": {
+        "Aerospace/Def": 9,
+        "Industrials": 3,
+        "Trad Financials": 2,
+        "Healthcare": 1
+      },
+      "tickers": [
+        "AXP",
+        "BA",
+        "GD",
+        "GE",
+        "HEI",
+        "HII",
+        "HON",
+        "HWM",
+        "IBKR",
+        "LDOS",
+        "LMT",
+        "NOC",
+        "RTX",
+        "TDG",
+        "UNH"
+      ]
+    },
+    {
+      "id": 14,
+      "size": 25,
+      "label": "Consumer / Healthcare",
+      "markets": {
+        "US": 22,
+        "EU": 3
+      },
+      "sectors": {
+        "Consumer": 12,
+        "Healthcare": 8,
+        "Staples": 3,
+        "Utilities": 1,
+        "Trad Financials": 1
+      },
+      "tickers": [
+        "ABT",
+        "CL",
+        "COST",
+        "D",
+        "DEO",
+        "DG",
+        "DLTR",
+        "EW",
+        "HCA",
+        "ISRG",
+        "JNJ",
+        "KO",
+        "MCD",
+        "MCO",
+        "MDT",
+        "NKE",
+        "NSRGY",
+        "PEP",
+        "PG",
+        "SBUX",
+        "SYK",
+        "TGT",
+        "UL",
+        "WMT",
+        "ZTS"
+      ]
+    },
+    {
+      "id": 15,
+      "size": 10,
+      "label": "Mega Cap Tech / Tech/Semis",
+      "markets": {
+        "US": 6,
+        "EU": 2,
+        "Japan": 1,
+        "Taiwan": 1
+      },
+      "sectors": {
+        "Mega Cap Tech": 6,
+        "Tech/Semis": 2,
+        "Pharma": 1,
+        "Semis": 1
+      },
+      "tickers": [
+        "AMD",
+        "ASML",
+        "AVGO",
+        "DSCSY",
+        "INTC",
+        "NVDA",
+        "QCOM",
+        "STM",
+        "TSM",
+        "TXN"
+      ]
+    }
+  ],
+  "all_clusters": [
+    {
+      "id": 1,
+      "size": 54,
+      "label": "SaaS / Growth / Internet/Tech",
+      "markets": {
+        "US": 34,
+        "China": 16,
+        "EU": 3,
+        "India": 1
+      },
+      "sectors": {
+        "SaaS / Growth": 12,
+        "Internet/Tech": 10,
+        "Mega Cap Tech": 9,
+        "SmallMid Growth": 7,
+        "Other": 4,
+        "EV/Auto": 3,
+        "Trad Financials": 2,
+        "Tech/Semis": 2,
+        "Aerospace/Def": 1,
+        "REITs/Infra": 1,
+        "Industrials": 1,
+        "Biotech": 1,
+        "Banks": 1
+      },
+      "tickers": [
+        "AAPL",
+        "ABNB",
+        "ADBE",
+        "AMZN",
+        "AXON",
+        "BABA",
+        "BIDU",
+        "BILI",
+        "BILL",
+        "BLK",
+        "BN",
+        "CARR",
+        "CRM",
+        "CRWD",
+        "CSCO",
+        "DDOG",
+        "EFX",
+        "EXAS",
+        "FUTU",
+        "GLBE",
+        "GOOG",
+        "HUBS",
+        "IBN",
+        "JD",
+        "KWEB",
+        "LI",
+        "META",
+        "MNSO",
+        "MSFT",
+        "NET",
+        "NIO",
+        "NOW",
+        "NTES",
+        "ORCL",
+        "PANW",
+        "PATH",
+        "PDD",
+        "PYPL",
+        "RBLX",
+        "RELX",
+        "SAP",
+        "SHOP",
+        "SNOW",
+        "SPOT",
+        "TAL",
+        "TME",
+        "UBER",
+        "VEEV",
+        "WDAY",
+        "XPEV",
+        "YUMC",
+        "ZETA",
+        "ZS",
+        "ZTO"
+      ]
+    },
+    {
+      "id": 2,
+      "size": 16,
+      "label": "REITs / Utilities",
+      "markets": {
+        "US": 16
+      },
+      "sectors": {
+        "REITs": 7,
+        "Utilities": 6,
+        "Industrials": 2,
+        "Fixed Income": 1
+      },
+      "tickers": [
+        "AEP",
+        "AMT",
+        "DLR",
+        "DUK",
+        "EQIX",
+        "NEE",
+        "O",
+        "PLD",
+        "PSA",
+        "RSG",
+        "SHV",
+        "SO",
+        "SPG",
+        "SRE",
+        "WM",
+        "XEL"
+      ]
+    },
+    {
+      "id": 3,
+      "size": 9,
+      "label": "Financials / Auto",
+      "markets": {
+        "Japan": 9
+      },
+      "sectors": {
+        "Financials": 5,
+        "Auto": 2,
+        "Gaming": 1,
+        "Tech": 1
+      },
+      "tickers": [
+        "HMC",
+        "IX",
+        "MFG",
+        "MUFG",
+        "NMR",
+        "NTDOY",
+        "SMFG",
+        "SONY",
+        "TM"
+      ]
+    },
+    {
+      "id": 4,
+      "size": 17,
+      "label": "Trad Financials",
+      "markets": {
+        "US": 17
+      },
+      "sectors": {
+        "Trad Financials": 17
+      },
+      "tickers": [
+        "AIG",
+        "ALL",
+        "BAC",
+        "BRK-B",
+        "C",
+        "CB",
+        "COF",
+        "GS",
+        "JPM",
+        "MET",
+        "MKL",
+        "MS",
+        "PNC",
+        "PRU",
+        "SCHW",
+        "USB",
+        "WFC"
+      ]
+    },
+    {
+      "id": 5,
+      "size": 25,
+      "label": "Industrials / Consumer",
+      "markets": {
+        "US": 25
+      },
+      "sectors": {
+        "Industrials": 23,
+        "Consumer": 2
+      },
+      "tickers": [
+        "AME",
+        "AOS",
+        "CAT",
+        "CMI",
+        "DE",
+        "DOV",
+        "EMR",
+        "ETN",
+        "FAST",
+        "FTV",
+        "GWW",
+        "HD",
+        "ITW",
+        "LOW",
+        "NDSN",
+        "OTIS",
+        "PCAR",
+        "PH",
+        "ROK",
+        "SWK",
+        "TT",
+        "UNP",
+        "URI",
+        "WAB",
+        "XYL"
+      ]
+    },
+    {
+      "id": 6,
+      "size": 14,
+      "label": "Energy",
+      "markets": {
+        "US": 12,
+        "EU": 2
+      },
+      "sectors": {
+        "Energy": 14
+      },
+      "tickers": [
+        "COP",
+        "CVX",
+        "DVN",
+        "EOG",
+        "EQNR",
+        "FANG",
+        "HAL",
+        "MPC",
+        "OXY",
+        "PSX",
+        "SHEL",
+        "SLB",
+        "VLO",
+        "XOM"
+      ]
+    },
+    {
+      "id": 7,
+      "size": 10,
+      "label": "HK Blue Chip",
+      "markets": {
+        "China": 10
+      },
+      "sectors": {
+        "HK Blue Chip": 10
+      },
+      "tickers": [
+        "0700.HK",
+        "0939.HK",
+        "0941.HK",
+        "1398.HK",
+        "1810.HK",
+        "2318.HK",
+        "2628.HK",
+        "3690.HK",
+        "3988.HK",
+        "9988.HK"
+      ]
+    },
+    {
+      "id": 8,
+      "size": 9,
+      "label": "Biotech",
+      "markets": {
+        "US": 9
+      },
+      "sectors": {
+        "Biotech": 9
+      },
+      "tickers": [
+        "ALNY",
+        "ARGX",
+        "BMRN",
+        "IONS",
+        "LEGN",
+        "NBIX",
+        "PCVX",
+        "RARE",
+        "SRPT"
+      ]
+    },
+    {
+      "id": 9,
+      "size": 21,
+      "label": "Healthcare / Biotech",
+      "markets": {
+        "US": 17,
+        "EU": 4
+      },
+      "sectors": {
+        "Healthcare": 11,
+        "Biotech": 6,
+        "Pharma": 4
+      },
+      "tickers": [
+        "ABBV",
+        "AMGN",
+        "AZN",
+        "BIIB",
+        "BMY",
+        "DHR",
+        "GILD",
+        "GSK",
+        "HALO",
+        "INCY",
+        "LLY",
+        "MRK",
+        "MRNA",
+        "NVO",
+        "PFE",
+        "REGN",
+        "SMMT",
+        "SNY",
+        "TMO",
+        "UTHR",
+        "VRTX"
+      ]
+    },
+    {
+      "id": 10,
+      "size": 15,
+      "label": "Banks / Luxury",
+      "markets": {
+        "EU": 14,
+        "India": 1
+      },
+      "sectors": {
+        "Banks": 7,
+        "Luxury": 3,
+        "Tech/Semis": 2,
+        "Materials": 1,
+        "Pharma": 1,
+        "Industrials": 1
+      },
+      "tickers": [
+        "BASFY",
+        "BAYRY",
+        "BBVA",
+        "DB",
+        "ERIC",
+        "HDB",
+        "HESAY",
+        "HSBC",
+        "ING",
+        "LVMUY",
+        "NOK",
+        "PPRUY",
+        "SAN",
+        "SIEGY",
+        "UBS"
+      ]
+    },
+    {
+      "id": 11,
+      "size": 7,
+      "label": "Energy Svcs / Energy",
+      "markets": {
+        "US": 6,
+        "EU": 1
+      },
+      "sectors": {
+        "Energy Svcs": 6,
+        "Energy": 1
+      },
+      "tickers": [
+        "AMR",
+        "BTU",
+        "HCC",
+        "NE",
+        "TDW",
+        "TTE",
+        "VAL"
+      ]
+    },
+    {
+      "id": 12,
+      "size": 8,
+      "label": "Fintech / Crypto / Industrials",
+      "markets": {
+        "US": 8
+      },
+      "sectors": {
+        "Fintech / Crypto": 6,
+        "Industrials": 1,
+        "SaaS / Growth": 1
+      },
+      "tickers": [
+        "AFRM",
+        "COIN",
+        "GNRC",
+        "HOOD",
+        "MARA",
+        "PLTR",
+        "RIOT",
+        "SOFI"
+      ]
+    },
+    {
+      "id": 13,
+      "size": 15,
+      "label": "Aerospace/Def / Industrials",
+      "markets": {
+        "US": 15
+      },
+      "sectors": {
+        "Aerospace/Def": 9,
+        "Industrials": 3,
+        "Trad Financials": 2,
+        "Healthcare": 1
+      },
+      "tickers": [
+        "AXP",
+        "BA",
+        "GD",
+        "GE",
+        "HEI",
+        "HII",
+        "HON",
+        "HWM",
+        "IBKR",
+        "LDOS",
+        "LMT",
+        "NOC",
+        "RTX",
+        "TDG",
+        "UNH"
+      ]
+    },
+    {
+      "id": 14,
+      "size": 25,
+      "label": "Consumer / Healthcare",
+      "markets": {
+        "US": 22,
+        "EU": 3
+      },
+      "sectors": {
+        "Consumer": 12,
+        "Healthcare": 8,
+        "Staples": 3,
+        "Utilities": 1,
+        "Trad Financials": 1
+      },
+      "tickers": [
+        "ABT",
+        "CL",
+        "COST",
+        "D",
+        "DEO",
+        "DG",
+        "DLTR",
+        "EW",
+        "HCA",
+        "ISRG",
+        "JNJ",
+        "KO",
+        "MCD",
+        "MCO",
+        "MDT",
+        "NKE",
+        "NSRGY",
+        "PEP",
+        "PG",
+        "SBUX",
+        "SYK",
+        "TGT",
+        "UL",
+        "WMT",
+        "ZTS"
+      ]
+    },
+    {
+      "id": 15,
+      "size": 10,
+      "label": "Mega Cap Tech / Tech/Semis",
+      "markets": {
+        "US": 6,
+        "EU": 2,
+        "Japan": 1,
+        "Taiwan": 1
+      },
+      "sectors": {
+        "Mega Cap Tech": 6,
+        "Tech/Semis": 2,
+        "Pharma": 1,
+        "Semis": 1
+      },
+      "tickers": [
+        "AMD",
+        "ASML",
+        "AVGO",
+        "DSCSY",
+        "INTC",
+        "NVDA",
+        "QCOM",
+        "STM",
+        "TSM",
+        "TXN"
+      ]
+    }
+  ],
+  "cluster_risk": [
+    {
+      "cluster": 1,
+      "label": "SaaS / Growth / Internet/Tech",
+      "n_positions": 11,
+      "total_stocks": 54,
+      "current_risk": 0.6391064624789472,
+      "hrp_risk": 0.2852659429726306,
+      "eq_risk": 0.44063064354058995
+    },
+    {
+      "cluster": 2,
+      "label": "REITs / Utilities",
+      "n_positions": 1,
+      "total_stocks": 16,
+      "current_risk": 5.5359144883714126e-05,
+      "hrp_risk": 5.595738153799968e-05,
+      "eq_risk": 1.1302301643875625e-05
+    },
+    {
+      "cluster": 3,
+      "label": "Financials / Auto",
+      "n_positions": 0,
+      "total_stocks": 9,
+      "current_risk": 0.0,
+      "hrp_risk": 0.0,
+      "eq_risk": 0.0
+    },
+    {
+      "cluster": 4,
+      "label": "Trad Financials",
+      "n_positions": 3,
+      "total_stocks": 17,
+      "current_risk": 0.0734648077404543,
+      "hrp_risk": 0.19539605624258322,
+      "eq_risk": 0.05239374812015465
+    },
+    {
+      "cluster": 5,
+      "label": "Industrials / Consumer",
+      "n_positions": 0,
+      "total_stocks": 25,
+      "current_risk": 0.0,
+      "hrp_risk": 0.0,
+      "eq_risk": 0.0
+    },
+    {
+      "cluster": 6,
+      "label": "Energy",
+      "n_positions": 0,
+      "total_stocks": 14,
+      "current_risk": 0.0,
+      "hrp_risk": 0.0,
+      "eq_risk": 0.0
+    },
+    {
+      "cluster": 7,
+      "label": "HK Blue Chip",
+      "n_positions": 0,
+      "total_stocks": 10,
+      "current_risk": 0.0,
+      "hrp_risk": 0.0,
+      "eq_risk": 0.0
+    },
+    {
+      "cluster": 8,
+      "label": "Biotech",
+      "n_positions": 0,
+      "total_stocks": 9,
+      "current_risk": 0.0,
+      "hrp_risk": 0.0,
+      "eq_risk": 0.0
+    },
+    {
+      "cluster": 9,
+      "label": "Healthcare / Biotech",
+      "n_positions": 0,
+      "total_stocks": 21,
+      "current_risk": 0.0,
+      "hrp_risk": 0.0,
+      "eq_risk": 0.0
+    },
+    {
+      "cluster": 10,
+      "label": "Banks / Luxury",
+      "n_positions": 1,
+      "total_stocks": 15,
+      "current_risk": 0.009760661338147864,
+      "hrp_risk": 0.07784653409175367,
+      "eq_risk": 0.01721327626578124
+    },
+    {
+      "cluster": 11,
+      "label": "Energy Svcs / Energy",
+      "n_positions": 5,
+      "total_stocks": 7,
+      "current_risk": 0.030959223492513774,
+      "hrp_risk": 0.2609550404573093,
+      "eq_risk": 0.18617824645338474
+    },
+    {
+      "cluster": 12,
+      "label": "Fintech / Crypto / Industrials",
+      "n_positions": 2,
+      "total_stocks": 8,
+      "current_risk": 0.11299583516019182,
+      "hrp_risk": 0.014782940234927745,
+      "eq_risk": 0.16624607151744353
+    },
+    {
+      "cluster": 13,
+      "label": "Aerospace/Def / Industrials",
+      "n_positions": 2,
+      "total_stocks": 15,
+      "current_risk": 0.02267001363240552,
+      "hrp_risk": 0.06930592165258659,
+      "eq_risk": 0.04309931759259342
+    },
+    {
+      "cluster": 14,
+      "label": "Consumer / Healthcare",
+      "n_positions": 1,
+      "total_stocks": 25,
+      "current_risk": 0.003121944156577129,
+      "hrp_risk": 0.06651327704165472,
+      "eq_risk": 0.0018627609675047525
+    },
+    {
+      "cluster": 15,
+      "label": "Mega Cap Tech / Tech/Semis",
+      "n_positions": 2,
+      "total_stocks": 10,
+      "current_risk": 0.10786569285585769,
+      "hrp_risk": 0.02987832992495932,
+      "eq_risk": 0.09236463324088404
+    }
+  ],
+  "risk_current": {
+    "vol": 0.21785513528272876,
+    "hhi": 0.05868739694561073,
+    "eff_n": 17.039433541868664,
+    "div": 1.6147851587492543,
+    "max_w": 0.14462123240086808
+  },
+  "risk_hrp": {
+    "vol": 0.132640379370445,
+    "hhi": 0.07790828050434159,
+    "eff_n": 12.83560609381275,
+    "div": 1.9148891391695662,
+    "max_w": 0.15000000000016409
+  },
+  "risk_equal": {
+    "vol": 0.22539418139892214,
+    "hhi": 0.03571428571428572,
+    "eff_n": 27.999999999999996,
+    "div": 1.7789348630327104,
+    "max_w": 0.03571428571428571
+  },
+  "eigenvalues": [
+    {
+      "index": 1,
+      "value": -0.4460857508160547
+    },
+    {
+      "index": 2,
+      "value": -0.29426262271007086
+    },
+    {
+      "index": 3,
+      "value": -0.25588984677743243
+    },
+    {
+      "index": 4,
+      "value": -0.22312296416939903
+    },
+    {
+      "index": 5,
+      "value": -0.19231791667414955
+    },
+    {
+      "index": 6,
+      "value": -0.1780814970661937
+    },
+    {
+      "index": 7,
+      "value": -0.12174741236400033
+    },
+    {
+      "index": 8,
+      "value": -0.10036211620938351
+    },
+    {
+      "index": 9,
+      "value": -0.09744949502571654
+    },
+    {
+      "index": 10,
+      "value": -0.09229880895734821
+    },
+    {
+      "index": 11,
+      "value": -0.08518519455553486
+    },
+    {
+      "index": 12,
+      "value": -0.07873441339159815
+    },
+    {
+      "index": 13,
+      "value": -0.0653486014633975
+    },
+    {
+      "index": 14,
+      "value": -0.0479137370895224
+    },
+    {
+      "index": 15,
+      "value": -0.020266865358892883
+    },
+    {
+      "index": 16,
+      "value": 0.005254021357543159
+    },
+    {
+      "index": 17,
+      "value": 0.011822265240460261
+    },
+    {
+      "index": 18,
+      "value": 0.03204372266864931
+    },
+    {
+      "index": 19,
+      "value": 0.033349324989717086
+    },
+    {
+      "index": 20,
+      "value": 0.08706340746305252
+    },
+    {
+      "index": 21,
+      "value": 0.10120484779706418
+    },
+    {
+      "index": 22,
+      "value": 0.11286155816537535
+    },
+    {
+      "index": 23,
+      "value": 0.1319653592517096
+    },
+    {
+      "index": 24,
+      "value": 0.1363222113515865
+    },
+    {
+      "index": 25,
+      "value": 0.1527368514851879
+    }
+  ],
+  "sigma_sweep": [
+    {
+      "sigma": 0.6179151979655764,
+      "k": 6
+    },
+    {
+      "sigma": 0.6203379058114183,
+      "k": 6
+    },
+    {
+      "sigma": 0.6227606136572602,
+      "k": 6
+    },
+    {
+      "sigma": 0.6251833215031022,
+      "k": 6
+    },
+    {
+      "sigma": 0.627606029348944,
+      "k": 6
+    },
+    {
+      "sigma": 0.630028737194786,
+      "k": 6
+    },
+    {
+      "sigma": 0.632451445040628,
+      "k": 6
+    },
+    {
+      "sigma": 0.6348741528864699,
+      "k": 6
+    },
+    {
+      "sigma": 0.6372968607323118,
+      "k": 6
+    },
+    {
+      "sigma": 0.6397195685781538,
+      "k": 6
+    },
+    {
+      "sigma": 0.6421422764239957,
+      "k": 6
+    },
+    {
+      "sigma": 0.6445649842698377,
+      "k": 6
+    },
+    {
+      "sigma": 0.6469876921156795,
+      "k": 6
+    },
+    {
+      "sigma": 0.6494103999615215,
+      "k": 6
+    },
+    {
+      "sigma": 0.6518331078073634,
+      "k": 6
+    },
+    {
+      "sigma": 0.6542558156532053,
+      "k": 6
+    },
+    {
+      "sigma": 0.6566785234990473,
+      "k": 6
+    },
+    {
+      "sigma": 0.6591012313448892,
+      "k": 6
+    },
+    {
+      "sigma": 0.6615239391907312,
+      "k": 6
+    },
+    {
+      "sigma": 0.6639466470365731,
+      "k": 6
+    },
+    {
+      "sigma": 0.666369354882415,
+      "k": 6
+    },
+    {
+      "sigma": 0.668792062728257,
+      "k": 6
+    },
+    {
+      "sigma": 0.6712147705740988,
+      "k": 6
+    },
+    {
+      "sigma": 0.6736374784199408,
+      "k": 6
+    },
+    {
+      "sigma": 0.6760601862657828,
+      "k": 6
+    },
+    {
+      "sigma": 0.6784828941116247,
+      "k": 6
+    },
+    {
+      "sigma": 0.6809056019574666,
+      "k": 6
+    },
+    {
+      "sigma": 0.6833283098033085,
+      "k": 6
+    },
+    {
+      "sigma": 0.6857510176491505,
+      "k": 6
+    },
+    {
+      "sigma": 0.6881737254949924,
+      "k": 6
+    },
+    {
+      "sigma": 0.6905964333408343,
+      "k": 6
+    },
+    {
+      "sigma": 0.6930191411866763,
+      "k": 6
+    },
+    {
+      "sigma": 0.6954418490325183,
+      "k": 6
+    },
+    {
+      "sigma": 0.6978645568783601,
+      "k": 6
+    },
+    {
+      "sigma": 0.7002872647242021,
+      "k": 6
+    },
+    {
+      "sigma": 0.702709972570044,
+      "k": 19
+    },
+    {
+      "sigma": 0.705132680415886,
+      "k": 19
+    },
+    {
+      "sigma": 0.7075553882617278,
+      "k": 19
+    },
+    {
+      "sigma": 0.7099780961075698,
+      "k": 19
+    },
+    {
+      "sigma": 0.7124008039534118,
+      "k": 19
+    },
+    {
+      "sigma": 0.7148235117992536,
+      "k": 19
+    },
+    {
+      "sigma": 0.7172462196450956,
+      "k": 19
+    },
+    {
+      "sigma": 0.7196689274909376,
+      "k": 19
+    },
+    {
+      "sigma": 0.7220916353367794,
+      "k": 19
+    },
+    {
+      "sigma": 0.7245143431826214,
+      "k": 19
+    },
+    {
+      "sigma": 0.7269370510284633,
+      "k": 19
+    },
+    {
+      "sigma": 0.7293597588743053,
+      "k": 19
+    },
+    {
+      "sigma": 0.7317824667201472,
+      "k": 19
+    },
+    {
+      "sigma": 0.7342051745659891,
+      "k": 19
+    },
+    {
+      "sigma": 0.7366278824118311,
+      "k": 19
+    },
+    {
+      "sigma": 0.739050590257673,
+      "k": 19
+    },
+    {
+      "sigma": 0.7414732981035149,
+      "k": 19
+    },
+    {
+      "sigma": 0.7438960059493569,
+      "k": 19
+    },
+    {
+      "sigma": 0.7463187137951988,
+      "k": 19
+    },
+    {
+      "sigma": 0.7487414216410407,
+      "k": 19
+    },
+    {
+      "sigma": 0.7511641294868827,
+      "k": 19
+    },
+    {
+      "sigma": 0.7535868373327246,
+      "k": 19
+    },
+    {
+      "sigma": 0.7560095451785666,
+      "k": 19
+    },
+    {
+      "sigma": 0.7584322530244084,
+      "k": 19
+    },
+    {
+      "sigma": 0.7608549608702504,
+      "k": 19
+    }
+  ],
+  "correlation_matrix": {
+    "tickers": [
+      "GOOG",
+      "AMZN",
+      "META",
+      "MSFT",
+      "ZETA",
+      "SHOP",
+      "UBER",
+      "EFX",
+      "IBN",
+      "KWEB",
+      "BN",
+      "SHV",
+      "JPM",
+      "BRK-B",
+      "MKL",
+      "HDB",
+      "NE",
+      "HCC",
+      "AMR",
+      "VAL",
+      "TDW",
+      "HOOD",
+      "COIN",
+      "IBKR",
+      "UNH",
+      "JNJ",
+      "NVDA",
+      "TSM"
+    ],
+    "values": [
+      [
+        1.0,
+        0.6235658877552772,
+        0.549366288087478,
+        0.6139307643381232,
+        0.32455456240410896,
+        0.4796292932969174,
+        0.38292257608852975,
+        0.3653627876908335,
+        0.30016307670938314,
+        0.2983004197351828,
+        0.4732576943135738,
+        0.06813197612197963,
+        0.33018709304046967,
+        0.34467970514076,
+        0.2182216936648767,
+        0.2522690534611423,
+        0.21068669120128175,
+        0.1364483271288702,
+        0.13295860431173884,
+        0.22602770839745434,
+        0.1310531059756975,
+        0.3473745235092548,
+        0.4180835650866664,
+        0.330664386814407,
+        0.10308379481313903,
+        0.05389072491067052,
+        0.5291854962325975,
+        0.45873093550777244
+      ],
+      [
+        0.6235658877552772,
+        1.0,
+        0.5912937848416917,
+        0.6395217951743007,
+        0.36947184629003194,
+        0.5731753323017552,
+        0.47145608137376144,
+        0.4029784453781454,
+        0.3348233520539774,
+        0.2991852138787246,
+        0.5251545657511851,
+        0.042244851337017754,
+        0.373928879489142,
+        0.36037969060105585,
+        0.24440013164216276,
+        0.24713199042391376,
+        0.24641519152520353,
+        0.14094942386089637,
+        0.15877197670676765,
+        0.23357768477428079,
+        0.1577564975194878,
+        0.40378864050691315,
+        0.4788659489416197,
+        0.37168154362302586,
+        0.07785220891939358,
+        0.005160185469377374,
+        0.5519972324765057,
+        0.45946916757487244
+      ],
+      [
+        0.549366288087478,
+        0.5912937848416917,
+        1.0,
+        0.5503766418571082,
+        0.3397091238815393,
+        0.4717077267766357,
+        0.4312655229259317,
+        0.3764234520526832,
+        0.3007541177092624,
+        0.31334616409416277,
+        0.4395841392637721,
+        0.04058470119270728,
+        0.3032192719076743,
+        0.29188669189013244,
+        0.1879225193278064,
+        0.221141881363519,
+        0.18956410756906258,
+        0.06926736668854876,
+        0.06662196164425017,
+        0.1613093240944833,
+        0.09330930379031481,
+        0.32760176047239625,
+        0.3814803481348404,
+        0.32404656568819407,
+        0.023470565529195825,
+        -0.0025159924150318963,
+        0.48856660658855433,
+        0.42700114499116115
+      ],
+      [
+        0.6139307643381232,
+        0.6395217951743007,
+        0.5503766418571082,
+        1.0,
+        0.3304726497231033,
+        0.4690661376752966,
+        0.38516364945610576,
+        0.40615729922425176,
+        0.32103422475188936,
+        0.26018877299728227,
+        0.48878002411918964,
+        0.07851698540554107,
+        0.3285644744639559,
+        0.3587283559521888,
+        0.23037199189657467,
+        0.285115742451338,
+        0.17753913438578625,
+        0.0736020747758456,
+        0.095069033777807,
+        0.19628671553912508,
+        0.1006923935269356,
+        0.33604958084315795,
+        0.41487652235920536,
+        0.33869052757613133,
+        0.11998479664568204,
+        0.05212618406143155,
+        0.6167230480910589,
+        0.4737294649846544
+      ],
+      [
+        0.32455456240410896,
+        0.36947184629003194,
+        0.3397091238815393,
+        0.3304726497231033,
+        1.0,
+        0.3658569666363832,
+        0.34203007313203443,
+        0.3015045720667316,
+        0.21852345721711353,
+        0.23678409247992885,
+        0.40610907583911887,
+        0.039627476894909,
+        0.2737500495235616,
+        0.24647854650560325,
+        0.19964459612492055,
+        0.20468689900884168,
+        0.20437552110177984,
+        0.13989936840592473,
+        0.14198089650558263,
+        0.17350929408666424,
+        0.14825371149519392,
+        0.3655811060391721,
+        0.38628332535059345,
+        0.3184981161142282,
+        0.07108456857470223,
+        -0.0288983419896192,
+        0.33279363890518426,
+        0.29045697889982297
+      ],
+      [
+        0.4796292932969174,
+        0.5731753323017552,
+        0.4717077267766357,
+        0.4690661376752966,
+        0.3658569666363832,
+        1.0,
+        0.5075600973707131,
+        0.4350118653819399,
+        0.2910773367548493,
+        0.41587244715803573,
+        0.5356797830470247,
+        0.058791762586447825,
+        0.35609568701535055,
+        0.2804186485492758,
+        0.18755691717453657,
+        0.253150358224463,
+        0.22283405566409709,
+        0.1381268249459587,
+        0.1355539175204624,
+        0.21350410667806433,
+        0.12347763301445586,
+        0.4882614521094219,
+        0.5099151666022415,
+        0.3868947069240532,
+        0.042150601291841984,
+        -0.01111051687048172,
+        0.5118356553418,
+        0.4348798500047857
+      ],
+      [
+        0.38292257608852975,
+        0.47145608137376144,
+        0.4312655229259317,
+        0.38516364945610576,
+        0.34203007313203443,
+        0.5075600973707131,
+        1.0,
+        0.3436249568826182,
+        0.2915293343904466,
+        0.37010592385168745,
+        0.4392307799487962,
+        0.0375304756008519,
+        0.3398183329347255,
+        0.26271180428697705,
+        0.21535269106794266,
+        0.28281754342065163,
+        0.21125720018692679,
+        0.13280301397111552,
+        0.15799493949643192,
+        0.19692796275077398,
+        0.14311699245831183,
+        0.40110639144016474,
+        0.4297147442110737,
+        0.35892792422064895,
+        0.05697735950826574,
+        0.004512058647910394,
+        0.43448369942289966,
+        0.3890101739648652
+      ],
+      [
+        0.3653627876908335,
+        0.4029784453781454,
+        0.3764234520526832,
+        0.40615729922425176,
+        0.3015045720667316,
+        0.4350118653819399,
+        0.3436249568826182,
+        1.0,
+        0.2884545126609268,
+        0.225232289593956,
+        0.5579126533144876,
+        0.12753167887234684,
+        0.3212361901478126,
+        0.40041262446594467,
+        0.24703846889057088,
+        0.2751123992788991,
+        0.2320896267998637,
+        0.09419142452050853,
+        0.11658756864116773,
+        0.2212485107242916,
+        0.14779403179749975,
+        0.30502209758758964,
+        0.3566498578049521,
+        0.23140936540808674,
+        0.14300229029964945,
+        0.14915034068067645,
+        0.35802968852799344,
+        0.35704452635749573
+      ],
+      [
+        0.30016307670938314,
+        0.3348233520539774,
+        0.3007541177092624,
+        0.32103422475188936,
+        0.21852345721711353,
+        0.2910773367548493,
+        0.2915293343904466,
+        0.2884545126609268,
+        1.0,
+        0.22639269886386995,
+        0.3907792541152854,
+        0.006228788342162147,
+        0.3531443266453556,
+        0.37641573852092464,
+        0.23251429973923482,
+        0.6434938897281708,
+        0.14464088472258252,
+        0.130643394400396,
+        0.11633894144420066,
+        0.13714067306529945,
+        0.10723511724190395,
+        0.20970469808235578,
+        0.2625943296294502,
+        0.2824811015559546,
+        0.05331864172396234,
+        0.20072187031016625,
+        0.2843162537996413,
+        0.27383102196755943
+      ],
+      [
+        0.2983004197351828,
+        0.2991852138787246,
+        0.31334616409416277,
+        0.26018877299728227,
+        0.23678409247992885,
+        0.41587244715803573,
+        0.37010592385168745,
+        0.225232289593956,
+        0.22639269886386995,
+        1.0,
+        0.3867651793133469,
+        0.04840121989851921,
+        0.24389989635199494,
+        0.1620642030876021,
+        0.15610704768637054,
+        0.24907314275550788,
+        0.18695583978552993,
+        0.1561297930433291,
+        0.15437332635370182,
+        0.216546400235193,
+        0.09828295513862935,
+        0.3484069014090222,
+        0.31579300973003727,
+        0.28659364384069164,
+        0.04816611957323859,
+        0.0028156658548974915,
+        0.3155794096185871,
+        0.34189286288003434
+      ],
+      [
+        0.4732576943135738,
+        0.5251545657511851,
+        0.4395841392637721,
+        0.48878002411918964,
+        0.40610907583911887,
+        0.5356797830470247,
+        0.4392307799487962,
+        0.5579126533144876,
+        0.3907792541152854,
+        0.3867651793133469,
+        1.0,
+        0.05118886716732984,
+        0.5472413083146971,
+        0.5092270051007903,
+        0.4091299115332789,
+        0.3597677824292951,
+        0.37391274536986163,
+        0.22591558012190918,
+        0.2547107992112639,
+        0.37202423089667325,
+        0.2844268836311105,
+        0.4542008723195478,
+        0.4554879339777915,
+        0.4620553990565054,
+        0.13024038767271237,
+        0.12249424784249646,
+        0.49746905472909014,
+        0.507810699689958
+      ],
+      [
+        0.06813197612197963,
+        0.042244851337017754,
+        0.04058470119270728,
+        0.07851698540554107,
+        0.039627476894909,
+        0.058791762586447825,
+        0.0375304756008519,
+        0.12753167887234684,
+        0.006228788342162147,
+        0.04840121989851921,
+        0.05118886716732984,
+        1.0,
+        -0.011648903469423712,
+        0.026696027664216995,
+        -0.047174292227340126,
+        0.038658750745752694,
+        -0.06329895547572001,
+        -0.016017134193582756,
+        -0.0575535827717753,
+        -0.08765747058589828,
+        -0.09612244090880442,
+        0.024973334192854177,
+        0.03886887389688997,
+        -0.09667322973993224,
+        0.007250229969174436,
+        0.1188489751735478,
+        0.03995468369219676,
+        0.02509559870821027
+      ],
+      [
+        0.33018709304046967,
+        0.373928879489142,
+        0.3032192719076743,
+        0.3285644744639559,
+        0.2737500495235616,
+        0.35609568701535055,
+        0.3398183329347255,
+        0.3212361901478126,
+        0.3531443266453556,
+        0.24389989635199494,
+        0.5472413083146971,
+        -0.011648903469423712,
+        1.0,
+        0.6295596212684715,
+        0.4898460162957298,
+        0.338457830493997,
+        0.35083098555122616,
+        0.22595280585080466,
+        0.23492347848923117,
+        0.3149071422130799,
+        0.267155782377488,
+        0.34634116638351464,
+        0.35404031544512815,
+        0.539891884468421,
+        0.1583137346122271,
+        0.19068134899681496,
+        0.340863880315425,
+        0.33535193502808003
+      ],
+      [
+        0.34467970514076,
+        0.36037969060105585,
+        0.29188669189013244,
+        0.3587283559521888,
+        0.24647854650560325,
+        0.2804186485492758,
+        0.26271180428697705,
+        0.40041262446594467,
+        0.37641573852092464,
+        0.1620642030876021,
+        0.5092270051007903,
+        0.026696027664216995,
+        0.6295596212684715,
+        1.0,
+        0.5633189603284862,
+        0.31770405533973317,
+        0.32813329916082457,
+        0.19259617973457746,
+        0.18450183390598093,
+        0.2878715817548523,
+        0.23941815410791328,
+        0.2039497368779179,
+        0.2567198161900203,
+        0.3344967299179682,
+        0.2385602203253352,
+        0.38039103327570783,
+        0.25801866296562764,
+        0.20526314145044902
+      ],
+      [
+        0.2182216936648767,
+        0.24440013164216276,
+        0.1879225193278064,
+        0.23037199189657467,
+        0.19964459612492055,
+        0.18755691717453657,
+        0.21535269106794266,
+        0.24703846889057088,
+        0.23251429973923482,
+        0.15610704768637054,
+        0.4091299115332789,
+        -0.047174292227340126,
+        0.4898460162957298,
+        0.5633189603284862,
+        1.0,
+        0.23133384976285123,
+        0.24877154476237207,
+        0.18261855644245453,
+        0.16783010674064236,
+        0.2420330169111805,
+        0.20498652701266962,
+        0.16893998149437658,
+        0.14249117426838964,
+        0.33081847531825537,
+        0.18096955719297286,
+        0.20469807528683095,
+        0.1952211747386194,
+        0.160229223767217
+      ],
+      [
+        0.2522690534611423,
+        0.24713199042391376,
+        0.221141881363519,
+        0.285115742451338,
+        0.20468689900884168,
+        0.253150358224463,
+        0.28281754342065163,
+        0.2751123992788991,
+        0.6434938897281708,
+        0.24907314275550788,
+        0.3597677824292951,
+        0.038658750745752694,
+        0.338457830493997,
+        0.31770405533973317,
+        0.23133384976285123,
+        1.0,
+        0.13255119941889051,
+        0.10841118680277363,
+        0.07902090491343242,
+        0.11777718149195031,
+        0.08440181591183359,
+        0.20612525899703535,
+        0.21103772499838772,
+        0.23317997305139013,
+        0.04927574473339779,
+        0.17291021592469943,
+        0.24581029986950687,
+        0.2574654589061327
+      ],
+      [
+        0.21068669120128175,
+        0.24641519152520353,
+        0.18956410756906258,
+        0.17753913438578625,
+        0.20437552110177984,
+        0.22283405566409709,
+        0.21125720018692679,
+        0.2320896267998637,
+        0.14464088472258252,
+        0.18695583978552993,
+        0.37391274536986163,
+        -0.06329895547572001,
+        0.35083098555122616,
+        0.32813329916082457,
+        0.24877154476237207,
+        0.13255119941889051,
+        1.0,
+        0.33841875214533934,
+        0.35210168813105963,
+        0.8026171472547226,
+        0.6410751330549281,
+        0.23145429392480055,
+        0.2103082331939059,
+        0.32536545069655814,
+        0.11708886914906885,
+        0.026106070263453157,
+        0.23813533887523702,
+        0.2759957589354506
+      ],
+      [
+        0.1364483271288702,
+        0.14094942386089637,
+        0.06926736668854876,
+        0.0736020747758456,
+        0.13989936840592473,
+        0.1381268249459587,
+        0.13280301397111552,
+        0.09419142452050853,
+        0.130643394400396,
+        0.1561297930433291,
+        0.22591558012190918,
+        -0.016017134193582756,
+        0.22595280585080466,
+        0.19259617973457746,
+        0.18261855644245453,
+        0.10841118680277363,
+        0.33841875214533934,
+        1.0,
+        0.710632736316462,
+        0.34662646139560876,
+        0.303812350171204,
+        0.11538985330063906,
+        0.13773970320703655,
+        0.21771924340749826,
+        0.05860649796651539,
+        0.01893379753920013,
+        0.13214886191071645,
+        0.18659026521701108
+      ],
+      [
+        0.13295860431173884,
+        0.15877197670676765,
+        0.06662196164425017,
+        0.095069033777807,
+        0.14198089650558263,
+        0.1355539175204624,
+        0.15799493949643192,
+        0.11658756864116773,
+        0.11633894144420066,
+        0.15437332635370182,
+        0.2547107992112639,
+        -0.0575535827717753,
+        0.23492347848923117,
+        0.18450183390598093,
+        0.16783010674064236,
+        0.07902090491343242,
+        0.35210168813105963,
+        0.710632736316462,
+        1.0,
+        0.35856130230685157,
+        0.3490473048610832,
+        0.1674610996733199,
+        0.17243836790175077,
+        0.22990197705840332,
+        0.04945717271613741,
+        -0.020891168892372414,
+        0.16234229493443061,
+        0.1794859133047643
+      ],
+      [
+        0.22602770839745434,
+        0.23357768477428079,
+        0.1613093240944833,
+        0.19628671553912508,
+        0.17350929408666424,
+        0.21350410667806433,
+        0.19692796275077398,
+        0.2212485107242916,
+        0.13714067306529945,
+        0.216546400235193,
+        0.37202423089667325,
+        -0.08765747058589828,
+        0.3149071422130799,
+        0.2878715817548523,
+        0.2420330169111805,
+        0.11777718149195031,
+        0.8026171472547226,
+        0.34662646139560876,
+        0.35856130230685157,
+        1.0,
+        0.6453050105812692,
+        0.20921044781184492,
+        0.19445135909890682,
+        0.2993077463726566,
+        0.10577364580782558,
+        0.022078439692023277,
+        0.23518890671141068,
+        0.28402096274664174
+      ],
+      [
+        0.1310531059756975,
+        0.1577564975194878,
+        0.09330930379031481,
+        0.1006923935269356,
+        0.14825371149519392,
+        0.12347763301445586,
+        0.14311699245831183,
+        0.14779403179749975,
+        0.10723511724190395,
+        0.09828295513862935,
+        0.2844268836311105,
+        -0.09612244090880442,
+        0.267155782377488,
+        0.23941815410791328,
+        0.20498652701266962,
+        0.08440181591183359,
+        0.6410751330549281,
+        0.303812350171204,
+        0.3490473048610832,
+        0.6453050105812692,
+        1.0,
+        0.15219037569157595,
+        0.1368408151794875,
+        0.23745286288281975,
+        0.05712043820105309,
+        0.0007189567559003648,
+        0.16757582167618224,
+        0.2032401694380939
+      ],
+      [
+        0.3473745235092548,
+        0.40378864050691315,
+        0.32760176047239625,
+        0.33604958084315795,
+        0.3655811060391721,
+        0.4882614521094219,
+        0.40110639144016474,
+        0.30502209758758964,
+        0.20970469808235578,
+        0.3484069014090222,
+        0.4542008723195478,
+        0.024973334192854177,
+        0.34634116638351464,
+        0.2039497368779179,
+        0.16893998149437658,
+        0.20612525899703535,
+        0.23145429392480055,
+        0.11538985330063906,
+        0.1674610996733199,
+        0.20921044781184492,
+        0.15219037569157595,
+        1.0,
+        0.6038915585912706,
+        0.46877541931521916,
+        0.07336917292628674,
+        -0.045700699608865074,
+        0.41505231603585363,
+        0.3497313088437974
+      ],
+      [
+        0.4180835650866664,
+        0.4788659489416197,
+        0.3814803481348404,
+        0.41487652235920536,
+        0.38628332535059345,
+        0.5099151666022415,
+        0.4297147442110737,
+        0.3566498578049521,
+        0.2625943296294502,
+        0.31579300973003727,
+        0.4554879339777915,
+        0.03886887389688997,
+        0.35404031544512815,
+        0.2567198161900203,
+        0.14249117426838964,
+        0.21103772499838772,
+        0.2103082331939059,
+        0.13773970320703655,
+        0.17243836790175077,
+        0.19445135909890682,
+        0.1368408151794875,
+        0.6038915585912706,
+        1.0,
+        0.4138915463350293,
+        0.06071974182653975,
+        -0.033386221668595735,
+        0.470627170755705,
+        0.3558465705289929
+      ],
+      [
+        0.330664386814407,
+        0.37168154362302586,
+        0.32404656568819407,
+        0.33869052757613133,
+        0.3184981161142282,
+        0.3868947069240532,
+        0.35892792422064895,
+        0.23140936540808674,
+        0.2824811015559546,
+        0.28659364384069164,
+        0.4620553990565054,
+        -0.09667322973993224,
+        0.539891884468421,
+        0.3344967299179682,
+        0.33081847531825537,
+        0.23317997305139013,
+        0.32536545069655814,
+        0.21771924340749826,
+        0.22990197705840332,
+        0.2993077463726566,
+        0.23745286288281975,
+        0.46877541931521916,
+        0.4138915463350293,
+        1.0,
+        0.08997892411969331,
+        -0.004265912778218762,
+        0.41706812973474033,
+        0.396512997951103
+      ],
+      [
+        0.10308379481313903,
+        0.07785220891939358,
+        0.023470565529195825,
+        0.11998479664568204,
+        0.07108456857470223,
+        0.042150601291841984,
+        0.05697735950826574,
+        0.14300229029964945,
+        0.05331864172396234,
+        0.04816611957323859,
+        0.13024038767271237,
+        0.007250229969174436,
+        0.1583137346122271,
+        0.2385602203253352,
+        0.18096955719297286,
+        0.04927574473339779,
+        0.11708886914906885,
+        0.05860649796651539,
+        0.04945717271613741,
+        0.10577364580782558,
+        0.05712043820105309,
+        0.07336917292628674,
+        0.06071974182653975,
+        0.08997892411969331,
+        1.0,
+        0.20432426993324326,
+        0.06185074478651202,
+        0.011853278476384605
+      ],
+      [
+        0.05389072491067052,
+        0.005160185469377374,
+        -0.0025159924150318963,
+        0.05212618406143155,
+        -0.0288983419896192,
+        -0.01111051687048172,
+        0.004512058647910394,
+        0.14915034068067645,
+        0.20072187031016625,
+        0.0028156658548974915,
+        0.12249424784249646,
+        0.1188489751735478,
+        0.19068134899681496,
+        0.38039103327570783,
+        0.20469807528683095,
+        0.17291021592469943,
+        0.026106070263453157,
+        0.01893379753920013,
+        -0.020891168892372414,
+        0.022078439692023277,
+        0.0007189567559003648,
+        -0.045700699608865074,
+        -0.033386221668595735,
+        -0.004265912778218762,
+        0.20432426993324326,
+        1.0,
+        -0.10355621606651509,
+        -0.09270162850661569
+      ],
+      [
+        0.5291854962325975,
+        0.5519972324765057,
+        0.48856660658855433,
+        0.6167230480910589,
+        0.33279363890518426,
+        0.5118356553418,
+        0.43448369942289966,
+        0.35802968852799344,
+        0.2843162537996413,
+        0.3155794096185871,
+        0.49746905472909014,
+        0.03995468369219676,
+        0.340863880315425,
+        0.25801866296562764,
+        0.1952211747386194,
+        0.24581029986950687,
+        0.23813533887523702,
+        0.13214886191071645,
+        0.16234229493443061,
+        0.23518890671141068,
+        0.16757582167618224,
+        0.41505231603585363,
+        0.470627170755705,
+        0.41706812973474033,
+        0.06185074478651202,
+        -0.10355621606651509,
+        1.0,
+        0.693944954864925
+      ],
+      [
+        0.45873093550777244,
+        0.45946916757487244,
+        0.42700114499116115,
+        0.4737294649846544,
+        0.29045697889982297,
+        0.4348798500047857,
+        0.3890101739648652,
+        0.35704452635749573,
+        0.27383102196755943,
+        0.34189286288003434,
+        0.507810699689958,
+        0.02509559870821027,
+        0.33535193502808003,
+        0.20526314145044902,
+        0.160229223767217,
+        0.2574654589061327,
+        0.2759957589354506,
+        0.18659026521701108,
+        0.1794859133047643,
+        0.28402096274664174,
+        0.2032401694380939,
+        0.3497313088437974,
+        0.3558465705289929,
+        0.396512997951103,
+        0.011853278476384605,
+        -0.09270162850661569,
+        0.693944954864925,
+        1.0
+      ]
+    ]
+  },
+  "market_factor": {
+    "mean_raw_corr": 0.2327837608738249,
+    "mean_residual_corr": 0.005589858294088945,
+    "variance_explained": 0.25142680849410604
+  }
+}

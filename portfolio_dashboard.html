@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EEIF | Portfolio Optimizer</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #0B0E11; --surface: #141820; --surface2: #1A2030;
+    --border: #252D3A; --text: #E8ECF1; --text2: #8899AA;
+    --accent: #E8453C; --accent2: #3B82F6; --green: #10B981;
+    --amber: #F59E0B; --purple: #8B5CF6; --pink: #EC4899;
+    --cyan: #06B6D4; --orange: #F97316;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; }
+
+  .header {
+    padding: 24px 40px; display:flex; justify-content:space-between; align-items:center;
+    border-bottom: 1px solid var(--border); background: var(--surface);
+  }
+  .header h1 { font-size:20px; font-weight:700; letter-spacing:-0.5px; }
+  .header h1 span { color: var(--accent); }
+  .header-meta { font-size:12px; color:var(--text2); font-family:'JetBrains Mono',monospace; }
+
+  .tabs {
+    display:flex; gap:0; padding:0 40px; background:var(--surface);
+    border-bottom:1px solid var(--border);
+  }
+  .tab {
+    padding:12px 24px; font-size:13px; font-weight:500; cursor:pointer;
+    color:var(--text2); border-bottom:2px solid transparent; transition: all 0.2s;
+  }
+  .tab:hover { color:var(--text); }
+  .tab.active { color:var(--accent); border-bottom-color:var(--accent); }
+
+  .view { display:none; padding:32px 40px; }
+  .view.active { display:block; }
+
+  .grid { display:grid; gap:20px; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-23 { grid-template-columns: 2fr 3fr; }
+
+  .card {
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:12px; padding:20px; position:relative; overflow:hidden;
+  }
+  .card-title {
+    font-size:11px; text-transform:uppercase; letter-spacing:1.5px;
+    color:var(--text2); margin-bottom:16px; font-weight:500;
+  }
+
+  .stat-row { display:flex; gap:16px; margin-bottom:20px; }
+  .stat {
+    flex:1; background:var(--surface); border:1px solid var(--border);
+    border-radius:10px; padding:16px;
+  }
+  .stat-label { font-size:11px; color:var(--text2); text-transform:uppercase; letter-spacing:1px; }
+  .stat-value { font-size:28px; font-weight:700; margin-top:4px; font-family:'JetBrains Mono',monospace; }
+  .stat-sub { font-size:11px; color:var(--text2); margin-top:2px; }
+  .stat-value.green { color:var(--green); }
+  .stat-value.red { color:var(--accent); }
+
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th { text-align:left; padding:10px 12px; color:var(--text2); font-size:11px;
+       text-transform:uppercase; letter-spacing:1px; border-bottom:1px solid var(--border); font-weight:500; }
+  td { padding:10px 12px; border-bottom:1px solid var(--border); font-family:'JetBrains Mono',monospace; font-size:12px; }
+  tr:hover { background:var(--surface2); }
+
+  .badge {
+    display:inline-block; padding:2px 8px; border-radius:4px;
+    font-size:10px; font-weight:500; font-family:'JetBrains Mono',monospace;
+  }
+  .buy { color:#10B981; } .sell { color:#E8453C; }
+
+  .chart-container { position:relative; width:100%; }
+  .chart-container.pie { max-width:320px; margin:0 auto; }
+  .chart-container.bar { height:400px; }
+
+  .cluster-tag {
+    display:inline-block; padding:3px 10px; border-radius:6px;
+    font-size:11px; font-family:'JetBrains Mono',monospace; font-weight:500;
+  }
+
+  .tech-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .corr-canvas { width:100%!important; height:auto!important; image-rendering:pixelated; }
+
+  .footer {
+    padding:16px 40px; text-align:center; font-size:11px; color:var(--text2);
+    border-top:1px solid var(--border); margin-top:40px;
+  }
+
+  @media(max-width:900px) {
+    .grid-2,.grid-3,.grid-23,.tech-grid { grid-template-columns:1fr; }
+    .stat-row { flex-direction:column; }
+    .view { padding:20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span>EEIF</span> Portfolio Optimizer</h1>
+  <div class="header-meta" id="headerMeta">Loading...</div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" data-view="portfolio">Portfolio View</div>
+  <div class="tab" data-view="technical">Technical View</div>
+</div>
+
+<!-- ==================== PORTFOLIO VIEW ==================== -->
+<div class="view active" id="view-portfolio">
+
+  <div class="stat-row" id="statRow"></div>
+
+  <div class="grid grid-23" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-title">Current Allocation</div>
+      <div class="chart-container pie"><canvas id="pieCurrent"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">HRP Recommended Allocation</div>
+      <div class="chart-container pie"><canvas id="pieHRP"></canvas></div>
+    </div>
+  </div>
+
+  <div class="grid grid-2" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-title">Risk by Cluster</div>
+      <div class="chart-container" style="height:300px"><canvas id="riskByCluster"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Current vs Recommended Weights</div>
+      <div class="chart-container" style="height:300px"><canvas id="weightCompare"></canvas></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px">
+    <div class="card-title">Recommended Trades</div>
+    <table id="tradeTable">
+      <thead><tr>
+        <th>Position</th><th>Ticker</th><th>Cluster</th>
+        <th style="text-align:right">Current %</th>
+        <th style="text-align:right">Target %</th>
+        <th style="text-align:right">Action</th>
+        <th style="text-align:right">Amount</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Risk Comparison</div>
+    <table id="riskTable">
+      <thead><tr><th>Metric</th><th style="text-align:right">Current</th><th style="text-align:right">HRP</th><th style="text-align:right">Equal Wt</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== TECHNICAL VIEW ==================== -->
+<div class="view" id="view-technical">
+
+  <div class="grid grid-2" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-title">Eigenvalues of Graph Laplacian</div>
+      <div class="chart-container" style="height:280px"><canvas id="eigenChart"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Sigma Sweep (Cluster Stability)</div>
+      <div class="chart-container" style="height:280px"><canvas id="sigmaChart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="grid grid-2" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-title">Portfolio Correlation Matrix (Cluster-Sorted)</div>
+      <canvas id="corrMatrix" class="corr-canvas"></canvas>
+    </div>
+    <div class="card">
+      <div class="card-title">Market Factor Removal</div>
+      <div style="padding:20px 0">
+        <div id="mfStats" style="font-family:'JetBrains Mono',monospace; font-size:13px; line-height:2.2"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">All Training Clusters</div>
+    <table id="clusterTable">
+      <thead><tr><th>Cluster</th><th>Stocks</th><th>Top Sectors</th><th>Your Positions</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="footer">
+  HRP + Spectral Clustering (von Luxburg / Lopez de Prado) | Pocket Aces Investment Club | Emory University
+</div>
+
+<script>
+const COLORS = ['#E8453C','#3B82F6','#10B981','#F59E0B','#8B5CF6',
+  '#EC4899','#06B6D4','#F97316','#A3E635','#FB923C',
+  '#818CF8','#F472B6','#34D399','#FBBF24','#F87171'];
+
+function fmt(v, type) {
+  if (type === '%') return (v*100).toFixed(2) + '%';
+  if (type === '$') return '$' + Math.abs(v).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  if (type === 'n') return v.toFixed(1);
+  return v.toString();
+}
+
+async function init() {
+  let data;
+  try {
+    const resp = await fetch('portfolio_results.json');
+    data = await resp.json();
+  } catch(e) {
+    document.body.innerHTML = '<div style="padding:60px;text-align:center;color:#E8453C;font-size:18px">Could not load portfolio_results.json<br><br><span style="color:#8899AA;font-size:14px">Run portfolio_optimizer.py first, then open this file in the same directory.</span></div>';
+    return;
+  }
+
+  // Header
+  document.getElementById('headerMeta').textContent =
+    `${data.n_positions} positions | $${(data.total_value).toLocaleString('en-US',{maximumFractionDigits:0})} | ${data.date_range}`;
+
+  // Stats
+  const volDelta = data.risk_hrp.vol - data.risk_current.vol;
+  document.getElementById('statRow').innerHTML = `
+    <div class="stat"><div class="stat-label">Portfolio Value</div>
+      <div class="stat-value">$${(data.total_value/1000).toFixed(1)}k</div></div>
+    <div class="stat"><div class="stat-label">Current Volatility</div>
+      <div class="stat-value red">${fmt(data.risk_current.vol,'%')}</div></div>
+    <div class="stat"><div class="stat-label">HRP Volatility</div>
+      <div class="stat-value green">${fmt(data.risk_hrp.vol,'%')}</div>
+      <div class="stat-sub">${(volDelta*100).toFixed(2)}pp reduction</div></div>
+    <div class="stat"><div class="stat-label">Diversification</div>
+      <div class="stat-value">${data.risk_hrp.div.toFixed(2)}x</div>
+      <div class="stat-sub">vs ${data.risk_current.div.toFixed(2)}x current</div></div>
+    <div class="stat"><div class="stat-label">Clusters Used</div>
+      <div class="stat-value">${new Set(data.positions.map(p=>p.cluster)).size}</div>
+      <div class="stat-sub">of ${data.n_clusters} total</div></div>
+  `;
+
+  // Pie charts
+  const clusterGroups = {};
+  data.positions.forEach(p => {
+    const key = `C${p.cluster} ${p.cluster_label}`;
+    if (!clusterGroups[key]) clusterGroups[key] = {cur:0, hrp:0, color: COLORS[(p.cluster-1)%COLORS.length]};
+    clusterGroups[key].cur += p.current_weight;
+    clusterGroups[key].hrp += p.hrp_weight;
+  });
+
+  const pieLabels = Object.keys(clusterGroups);
+  const pieCurData = pieLabels.map(l => clusterGroups[l].cur*100);
+  const pieHRPData = pieLabels.map(l => clusterGroups[l].hrp*100);
+  const pieColors = pieLabels.map(l => clusterGroups[l].color);
+
+  const pieOpts = {
+    responsive:true, maintainAspectRatio:true,
+    plugins:{legend:{position:'right',labels:{color:'#8899AA',font:{size:10,family:'JetBrains Mono'},padding:8, boxWidth:12}},
+    tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${ctx.raw.toFixed(1)}%`}}}
+  };
+
+  new Chart('pieCurrent', {type:'pie', data:{labels:pieLabels, datasets:[{data:pieCurData, backgroundColor:pieColors, borderWidth:0}]}, options:pieOpts});
+  new Chart('pieHRP', {type:'pie', data:{labels:pieLabels, datasets:[{data:pieHRPData, backgroundColor:pieColors, borderWidth:0}]}, options:pieOpts});
+
+  // Risk by cluster
+  const activeRisk = data.cluster_risk.filter(c => c.n_positions > 0);
+  new Chart('riskByCluster', {
+    type: 'bar',
+    data: {
+      labels: activeRisk.map(c => `C${c.cluster}`),
+      datasets: [
+        {label:'Current', data:activeRisk.map(c=>c.current_risk*100), backgroundColor:'#666', borderRadius:4},
+        {label:'HRP', data:activeRisk.map(c=>c.hrp_risk*100), backgroundColor:'#E8453C', borderRadius:4},
+      ]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{labels:{color:'#8899AA',font:{size:11}}}},
+      scales:{x:{ticks:{color:'#666'}},y:{ticks:{color:'#666',callback:v=>v+'%'},grid:{color:'#1A2030'}}}
+    }
+  });
+
+  // Weight comparison (horizontal bar)
+  const sorted = [...data.positions].sort((a,b) => a.cluster - b.cluster || b.hrp_weight - a.hrp_weight);
+  new Chart('weightCompare', {
+    type: 'bar',
+    data: {
+      labels: sorted.map(p => p.ticker),
+      datasets: [
+        {label:'Current', data:sorted.map(p=>p.current_weight*100), backgroundColor:'#555'},
+        {label:'HRP', data:sorted.map(p=>p.hrp_weight*100), backgroundColor: sorted.map(p=>COLORS[(p.cluster-1)%COLORS.length])},
+      ]
+    },
+    options: {
+      indexAxis:'y', responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{labels:{color:'#8899AA',font:{size:11}}}},
+      scales:{x:{ticks:{color:'#666',callback:v=>v+'%'},grid:{color:'#1A2030'}},y:{ticks:{color:'#888',font:{size:9}}}}
+    }
+  });
+
+  // Trade table
+  const tbody = document.querySelector('#tradeTable tbody');
+  sorted.forEach(p => {
+    const isBuy = p.trade > 0;
+    const clColor = COLORS[(p.cluster-1)%COLORS.length];
+    tbody.innerHTML += `<tr>
+      <td style="font-family:'DM Sans';font-weight:500">${p.name}</td>
+      <td>${p.ticker}</td>
+      <td><span class="cluster-tag" style="background:${clColor}22;color:${clColor}">C${p.cluster}</span></td>
+      <td style="text-align:right">${(p.current_weight*100).toFixed(2)}%</td>
+      <td style="text-align:right">${(p.hrp_weight*100).toFixed(2)}%</td>
+      <td style="text-align:right" class="${isBuy?'buy':'sell'}">${isBuy?'BUY':'SELL'}</td>
+      <td style="text-align:right" class="${isBuy?'buy':'sell'}">${fmt(p.trade,'$')}</td>
+    </tr>`;
+  });
+
+  // Risk comparison table
+  const riskBody = document.querySelector('#riskTable tbody');
+  const metrics = [
+    ['Ann. Volatility','vol','%'],['Diversification','div','n'],
+    ['Effective Positions','eff_n','n'],['Max Weight','max_w','%'],['HHI','hhi','n'],
+  ];
+  metrics.forEach(([label,key,type]) => {
+    riskBody.innerHTML += `<tr>
+      <td style="font-family:'DM Sans'">${label}</td>
+      <td style="text-align:right">${fmt(data.risk_current[key],type)}</td>
+      <td style="text-align:right;color:#E8453C">${fmt(data.risk_hrp[key],type)}</td>
+      <td style="text-align:right;color:#3B82F6">${fmt(data.risk_equal[key],type)}</td>
+    </tr>`;
+  });
+
+  // === TECHNICAL VIEW ===
+
+  // Eigenvalues
+  const eigK = data.n_clusters;
+  new Chart('eigenChart', {
+    type:'bar',
+    data:{
+      labels: data.eigenvalues.map(e=>e.index),
+      datasets:[{data:data.eigenvalues.map(e=>e.value),
+        backgroundColor:data.eigenvalues.map(e=>e.index<=eigK?'#E8453C':'#2A2A3A'),
+        borderRadius:2}]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},
+        annotation:{annotations:{line:{type:'line',xMin:eigK+0.5,xMax:eigK+0.5,borderColor:'#F59E0B',borderDash:[5,5]}}}},
+      scales:{x:{ticks:{color:'#666',font:{size:9}},grid:{display:false}},y:{ticks:{color:'#666'},grid:{color:'#1A2030'}}}
+    }
+  });
+
+  // Sigma sweep
+  new Chart('sigmaChart', {
+    type:'line',
+    data:{
+      labels:data.sigma_sweep.map(s=>s.sigma.toFixed(3)),
+      datasets:[{data:data.sigma_sweep.map(s=>s.k), borderColor:'#E8453C', borderWidth:1.5, pointRadius:0, fill:false}]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{x:{ticks:{color:'#666',maxTicksLimit:8,font:{size:9}},title:{display:true,text:'sigma',color:'#666'}},
+              y:{ticks:{color:'#666'},title:{display:true,text:'k (clusters)',color:'#666'},grid:{color:'#1A2030'}}}
+    }
+  });
+
+  // Correlation matrix
+  const cm = data.correlation_matrix;
+  const cmCanvas = document.getElementById('corrMatrix');
+  const n = cm.tickers.length;
+  const cellSize = Math.max(12, Math.min(24, 500/n));
+  cmCanvas.width = n*cellSize; cmCanvas.height = n*cellSize;
+  const ctx = cmCanvas.getContext('2d');
+  for(let i=0;i<n;i++) for(let j=0;j<n;j++){
+    const v = cm.values[i][j];
+    const r = v>0 ? Math.round(180+75*v) : Math.round(180+75*v);
+    const b = v>0 ? Math.round(180-120*v) : Math.round(180+75*Math.abs(v));
+    const g = Math.round(180-100*Math.abs(v));
+    ctx.fillStyle = `rgb(${v>0?Math.min(255,r):Math.max(60,g)},${Math.max(60,g)},${v<0?Math.min(255,b):Math.max(60,g)})`;
+    ctx.fillRect(j*cellSize, i*cellSize, cellSize-1, cellSize-1);
+  }
+
+  // Market factor stats
+  const mf = data.market_factor;
+  document.getElementById('mfStats').innerHTML = `
+    <div style="margin-bottom:16px;color:#E8E6E3;font-size:14px;font-family:'DM Sans';font-weight:500">
+      Why we remove the market factor</div>
+    <div style="color:#8899AA;font-size:12px;line-height:1.8;font-family:'DM Sans';margin-bottom:20px">
+      Raw stock correlations are dominated by a single "market" factor &mdash; when the market goes up,
+      nearly everything goes up. This makes all stocks look similar. By regressing out the market return,
+      we reveal the <em>structural</em> relationships: which stocks co-move beyond what the market explains.
+    </div>
+    <div>Mean raw correlation: <span style="color:#E8453C">${mf.mean_raw_corr.toFixed(3)}</span></div>
+    <div>Mean residual correlation: <span style="color:#10B981">${mf.mean_residual_corr.toFixed(3)}</span></div>
+    <div>Variance explained by market: <span style="color:#F59E0B">${(mf.variance_explained*100).toFixed(1)}%</span></div>
+    <div style="margin-top:16px">kNN: <span style="color:#E8E6E3">${data.knn_k}</span></div>
+    <div>Sigma: <span style="color:#E8E6E3">${data.sigma.toFixed(4)}</span></div>
+    <div>Clusters (initial + re-cluster): <span style="color:#E8E6E3">${data.n_clusters}</span></div>
+    <div>Training universe: <span style="color:#E8E6E3">${data.n_training} stocks</span></div>
+  `;
+
+  // All clusters table
+  const ctBody = document.querySelector('#clusterTable tbody');
+  data.all_clusters.forEach(c => {
+    const yourPositions = data.positions.filter(p=>p.cluster===c.id).map(p=>p.ticker);
+    const topSectors = Object.entries(c.sectors).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([s,n])=>`${s} (${n})`).join(', ');
+    const clColor = COLORS[(c.id-1)%COLORS.length];
+    ctBody.innerHTML += `<tr>
+      <td><span class="cluster-tag" style="background:${clColor}22;color:${clColor}">C${c.id}</span></td>
+      <td>${c.size}</td>
+      <td style="font-family:'DM Sans';font-size:12px">${topSectors}</td>
+      <td style="font-size:12px">${yourPositions.length>0 ? yourPositions.join(', ') : '<span style="color:#555">-</span>'}</td>
+    </tr>`;
+  });
+}
+
+// Tab switching
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('view-'+tab.dataset.view).classList.add('active');
+  });
+});
+
+init();
+</script>
+</body>
+</html>
