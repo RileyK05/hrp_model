@@ -1,6 +1,7 @@
 """
 HRP + Spectral Clustering Portfolio Optimizer
-EEIF
+EEIF -- Emory University
+
 
 Outputs:
   - portfolio_results.json  (data for dashboard)
@@ -208,7 +209,7 @@ TICKER_META = {
 # =============================================================================
 #
 #     EVERYTHING BELOW THIS LINE IS THE MODEL ENGINE.
-#     IF YOU TOUCH THIS, EVERYTHING WILL EXPLODE AND WE WILL DIE
+#     IF YOU TOUCH ANYTHING BELOW THIS EVERYTHING WILL EXPLODE
 #     SO LIKE, PLEASE DON'T
 #
 #     The spectral clustering and HRP algorithms are calibrated
@@ -513,6 +514,17 @@ def run_optimizer():
             'variance_explained': float(1 - residuals.var().mean()/train_returns.var().mean()),
         },
     }
+
+    # Pairwise edges for cluster network visualization
+    edges = []
+    for i in range(n_p):
+        for j in range(i+1, n_p):
+            edges.append({
+                'source': port_tickers[i], 'target': port_tickers[j],
+                'corr': float(port_corr[i][j]),
+                'same_cluster': int(port_labels[i]) == int(port_labels[j]),
+            })
+    results['edges'] = edges
 
     # Save JSON
     with open('portfolio_results.json', 'w') as f:

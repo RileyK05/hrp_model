@@ -2639,5 +2639,2275 @@
     "mean_raw_corr": 0.2327837608738249,
     "mean_residual_corr": 0.005589858294088945,
     "variance_explained": 0.25142680849410604
-  }
+  },
+  "edges": [
+    {
+      "source": "GOOG",
+      "target": "AMZN",
+      "corr": 0.6235658877552772,
+      "same_cluster": true
+    },
+    {
+      "source": "GOOG",
+      "target": "NVDA",
+      "corr": 0.5291854962325975,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "META",
+      "corr": 0.549366288087478,
+      "same_cluster": true
+    },
+    {
+      "source": "GOOG",
+      "target": "MSFT",
+      "corr": 0.6139307643381232,
+      "same_cluster": true
+    },
+    {
+      "source": "GOOG",
+      "target": "TSM",
+      "corr": 0.45873093550777244,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "ZETA",
+      "corr": 0.32455456240410896,
+      "same_cluster": true
+    },
+    {
+      "source": "GOOG",
+      "target": "SHOP",
+      "corr": 0.4796292932969174,
+      "same_cluster": true
+    },
+    {
+      "source": "GOOG",
+      "target": "UBER",
+      "corr": 0.38292257608852975,
+      "same_cluster": true
+    },
+    {
+      "source": "GOOG",
+      "target": "HOOD",
+      "corr": 0.3473745235092548,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "COIN",
+      "corr": 0.4180835650866664,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "JPM",
+      "corr": 0.33018709304046967,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "BRK-B",
+      "corr": 0.34467970514076,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "MKL",
+      "corr": 0.2182216936648767,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "IBKR",
+      "corr": 0.330664386814407,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "EFX",
+      "corr": 0.3653627876908335,
+      "same_cluster": true
+    },
+    {
+      "source": "GOOG",
+      "target": "JNJ",
+      "corr": 0.05389072491067052,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "UNH",
+      "corr": 0.10308379481313903,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "HDB",
+      "corr": 0.2522690534611423,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "IBN",
+      "corr": 0.30016307670938314,
+      "same_cluster": true
+    },
+    {
+      "source": "GOOG",
+      "target": "KWEB",
+      "corr": 0.2983004197351828,
+      "same_cluster": true
+    },
+    {
+      "source": "GOOG",
+      "target": "NE",
+      "corr": 0.21068669120128175,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "HCC",
+      "corr": 0.1364483271288702,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "AMR",
+      "corr": 0.13295860431173884,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "VAL",
+      "corr": 0.22602770839745434,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "TDW",
+      "corr": 0.1310531059756975,
+      "same_cluster": false
+    },
+    {
+      "source": "GOOG",
+      "target": "BN",
+      "corr": 0.4732576943135738,
+      "same_cluster": true
+    },
+    {
+      "source": "GOOG",
+      "target": "SHV",
+      "corr": 0.06813197612197963,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "NVDA",
+      "corr": 0.5519972324765057,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "META",
+      "corr": 0.5912937848416917,
+      "same_cluster": true
+    },
+    {
+      "source": "AMZN",
+      "target": "MSFT",
+      "corr": 0.6395217951743007,
+      "same_cluster": true
+    },
+    {
+      "source": "AMZN",
+      "target": "TSM",
+      "corr": 0.45946916757487244,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "ZETA",
+      "corr": 0.36947184629003194,
+      "same_cluster": true
+    },
+    {
+      "source": "AMZN",
+      "target": "SHOP",
+      "corr": 0.5731753323017552,
+      "same_cluster": true
+    },
+    {
+      "source": "AMZN",
+      "target": "UBER",
+      "corr": 0.47145608137376144,
+      "same_cluster": true
+    },
+    {
+      "source": "AMZN",
+      "target": "HOOD",
+      "corr": 0.40378864050691315,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "COIN",
+      "corr": 0.4788659489416197,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "JPM",
+      "corr": 0.373928879489142,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "BRK-B",
+      "corr": 0.36037969060105585,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "MKL",
+      "corr": 0.24440013164216276,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "IBKR",
+      "corr": 0.37168154362302586,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "EFX",
+      "corr": 0.4029784453781454,
+      "same_cluster": true
+    },
+    {
+      "source": "AMZN",
+      "target": "JNJ",
+      "corr": 0.005160185469377374,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "UNH",
+      "corr": 0.07785220891939358,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "HDB",
+      "corr": 0.24713199042391376,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "IBN",
+      "corr": 0.3348233520539774,
+      "same_cluster": true
+    },
+    {
+      "source": "AMZN",
+      "target": "KWEB",
+      "corr": 0.2991852138787246,
+      "same_cluster": true
+    },
+    {
+      "source": "AMZN",
+      "target": "NE",
+      "corr": 0.24641519152520353,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "HCC",
+      "corr": 0.14094942386089637,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "AMR",
+      "corr": 0.15877197670676765,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "VAL",
+      "corr": 0.23357768477428079,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "TDW",
+      "corr": 0.1577564975194878,
+      "same_cluster": false
+    },
+    {
+      "source": "AMZN",
+      "target": "BN",
+      "corr": 0.5251545657511851,
+      "same_cluster": true
+    },
+    {
+      "source": "AMZN",
+      "target": "SHV",
+      "corr": 0.042244851337017754,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "META",
+      "corr": 0.48856660658855433,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "MSFT",
+      "corr": 0.6167230480910589,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "TSM",
+      "corr": 0.693944954864925,
+      "same_cluster": true
+    },
+    {
+      "source": "NVDA",
+      "target": "ZETA",
+      "corr": 0.33279363890518426,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "SHOP",
+      "corr": 0.5118356553418,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "UBER",
+      "corr": 0.43448369942289966,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "HOOD",
+      "corr": 0.41505231603585363,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "COIN",
+      "corr": 0.470627170755705,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "JPM",
+      "corr": 0.340863880315425,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "BRK-B",
+      "corr": 0.25801866296562764,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "MKL",
+      "corr": 0.1952211747386194,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "IBKR",
+      "corr": 0.41706812973474033,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "EFX",
+      "corr": 0.35802968852799344,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "JNJ",
+      "corr": -0.10355621606651509,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "UNH",
+      "corr": 0.06185074478651202,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "HDB",
+      "corr": 0.24581029986950687,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "IBN",
+      "corr": 0.2843162537996413,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "KWEB",
+      "corr": 0.3155794096185871,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "NE",
+      "corr": 0.23813533887523702,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "HCC",
+      "corr": 0.13214886191071645,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "AMR",
+      "corr": 0.16234229493443061,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "VAL",
+      "corr": 0.23518890671141068,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "TDW",
+      "corr": 0.16757582167618224,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "BN",
+      "corr": 0.49746905472909014,
+      "same_cluster": false
+    },
+    {
+      "source": "NVDA",
+      "target": "SHV",
+      "corr": 0.03995468369219676,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "MSFT",
+      "corr": 0.5503766418571082,
+      "same_cluster": true
+    },
+    {
+      "source": "META",
+      "target": "TSM",
+      "corr": 0.42700114499116115,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "ZETA",
+      "corr": 0.3397091238815393,
+      "same_cluster": true
+    },
+    {
+      "source": "META",
+      "target": "SHOP",
+      "corr": 0.4717077267766357,
+      "same_cluster": true
+    },
+    {
+      "source": "META",
+      "target": "UBER",
+      "corr": 0.4312655229259317,
+      "same_cluster": true
+    },
+    {
+      "source": "META",
+      "target": "HOOD",
+      "corr": 0.32760176047239625,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "COIN",
+      "corr": 0.3814803481348404,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "JPM",
+      "corr": 0.3032192719076743,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "BRK-B",
+      "corr": 0.29188669189013244,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "MKL",
+      "corr": 0.1879225193278064,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "IBKR",
+      "corr": 0.32404656568819407,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "EFX",
+      "corr": 0.3764234520526832,
+      "same_cluster": true
+    },
+    {
+      "source": "META",
+      "target": "JNJ",
+      "corr": -0.0025159924150318963,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "UNH",
+      "corr": 0.023470565529195825,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "HDB",
+      "corr": 0.221141881363519,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "IBN",
+      "corr": 0.3007541177092624,
+      "same_cluster": true
+    },
+    {
+      "source": "META",
+      "target": "KWEB",
+      "corr": 0.31334616409416277,
+      "same_cluster": true
+    },
+    {
+      "source": "META",
+      "target": "NE",
+      "corr": 0.18956410756906258,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "HCC",
+      "corr": 0.06926736668854876,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "AMR",
+      "corr": 0.06662196164425017,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "VAL",
+      "corr": 0.1613093240944833,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "TDW",
+      "corr": 0.09330930379031481,
+      "same_cluster": false
+    },
+    {
+      "source": "META",
+      "target": "BN",
+      "corr": 0.4395841392637721,
+      "same_cluster": true
+    },
+    {
+      "source": "META",
+      "target": "SHV",
+      "corr": 0.04058470119270728,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "TSM",
+      "corr": 0.4737294649846544,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "ZETA",
+      "corr": 0.3304726497231033,
+      "same_cluster": true
+    },
+    {
+      "source": "MSFT",
+      "target": "SHOP",
+      "corr": 0.4690661376752966,
+      "same_cluster": true
+    },
+    {
+      "source": "MSFT",
+      "target": "UBER",
+      "corr": 0.38516364945610576,
+      "same_cluster": true
+    },
+    {
+      "source": "MSFT",
+      "target": "HOOD",
+      "corr": 0.33604958084315795,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "COIN",
+      "corr": 0.41487652235920536,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "JPM",
+      "corr": 0.3285644744639559,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "BRK-B",
+      "corr": 0.3587283559521888,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "MKL",
+      "corr": 0.23037199189657467,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "IBKR",
+      "corr": 0.33869052757613133,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "EFX",
+      "corr": 0.40615729922425176,
+      "same_cluster": true
+    },
+    {
+      "source": "MSFT",
+      "target": "JNJ",
+      "corr": 0.05212618406143155,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "UNH",
+      "corr": 0.11998479664568204,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "HDB",
+      "corr": 0.285115742451338,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "IBN",
+      "corr": 0.32103422475188936,
+      "same_cluster": true
+    },
+    {
+      "source": "MSFT",
+      "target": "KWEB",
+      "corr": 0.26018877299728227,
+      "same_cluster": true
+    },
+    {
+      "source": "MSFT",
+      "target": "NE",
+      "corr": 0.17753913438578625,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "HCC",
+      "corr": 0.0736020747758456,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "AMR",
+      "corr": 0.095069033777807,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "VAL",
+      "corr": 0.19628671553912508,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "TDW",
+      "corr": 0.1006923935269356,
+      "same_cluster": false
+    },
+    {
+      "source": "MSFT",
+      "target": "BN",
+      "corr": 0.48878002411918964,
+      "same_cluster": true
+    },
+    {
+      "source": "MSFT",
+      "target": "SHV",
+      "corr": 0.07851698540554107,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "ZETA",
+      "corr": 0.29045697889982297,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "SHOP",
+      "corr": 0.4348798500047857,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "UBER",
+      "corr": 0.3890101739648652,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "HOOD",
+      "corr": 0.3497313088437974,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "COIN",
+      "corr": 0.3558465705289929,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "JPM",
+      "corr": 0.33535193502808003,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "BRK-B",
+      "corr": 0.20526314145044902,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "MKL",
+      "corr": 0.160229223767217,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "IBKR",
+      "corr": 0.396512997951103,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "EFX",
+      "corr": 0.35704452635749573,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "JNJ",
+      "corr": -0.09270162850661569,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "UNH",
+      "corr": 0.011853278476384605,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "HDB",
+      "corr": 0.2574654589061327,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "IBN",
+      "corr": 0.27383102196755943,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "KWEB",
+      "corr": 0.34189286288003434,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "NE",
+      "corr": 0.2759957589354506,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "HCC",
+      "corr": 0.18659026521701108,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "AMR",
+      "corr": 0.1794859133047643,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "VAL",
+      "corr": 0.28402096274664174,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "TDW",
+      "corr": 0.2032401694380939,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "BN",
+      "corr": 0.507810699689958,
+      "same_cluster": false
+    },
+    {
+      "source": "TSM",
+      "target": "SHV",
+      "corr": 0.02509559870821027,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "SHOP",
+      "corr": 0.3658569666363832,
+      "same_cluster": true
+    },
+    {
+      "source": "ZETA",
+      "target": "UBER",
+      "corr": 0.34203007313203443,
+      "same_cluster": true
+    },
+    {
+      "source": "ZETA",
+      "target": "HOOD",
+      "corr": 0.3655811060391721,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "COIN",
+      "corr": 0.38628332535059345,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "JPM",
+      "corr": 0.2737500495235616,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "BRK-B",
+      "corr": 0.24647854650560325,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "MKL",
+      "corr": 0.19964459612492055,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "IBKR",
+      "corr": 0.3184981161142282,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "EFX",
+      "corr": 0.3015045720667316,
+      "same_cluster": true
+    },
+    {
+      "source": "ZETA",
+      "target": "JNJ",
+      "corr": -0.0288983419896192,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "UNH",
+      "corr": 0.07108456857470223,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "HDB",
+      "corr": 0.20468689900884168,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "IBN",
+      "corr": 0.21852345721711353,
+      "same_cluster": true
+    },
+    {
+      "source": "ZETA",
+      "target": "KWEB",
+      "corr": 0.23678409247992885,
+      "same_cluster": true
+    },
+    {
+      "source": "ZETA",
+      "target": "NE",
+      "corr": 0.20437552110177984,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "HCC",
+      "corr": 0.13989936840592473,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "AMR",
+      "corr": 0.14198089650558263,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "VAL",
+      "corr": 0.17350929408666424,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "TDW",
+      "corr": 0.14825371149519392,
+      "same_cluster": false
+    },
+    {
+      "source": "ZETA",
+      "target": "BN",
+      "corr": 0.40610907583911887,
+      "same_cluster": true
+    },
+    {
+      "source": "ZETA",
+      "target": "SHV",
+      "corr": 0.039627476894909,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "UBER",
+      "corr": 0.5075600973707131,
+      "same_cluster": true
+    },
+    {
+      "source": "SHOP",
+      "target": "HOOD",
+      "corr": 0.4882614521094219,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "COIN",
+      "corr": 0.5099151666022415,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "JPM",
+      "corr": 0.35609568701535055,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "BRK-B",
+      "corr": 0.2804186485492758,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "MKL",
+      "corr": 0.18755691717453657,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "IBKR",
+      "corr": 0.3868947069240532,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "EFX",
+      "corr": 0.4350118653819399,
+      "same_cluster": true
+    },
+    {
+      "source": "SHOP",
+      "target": "JNJ",
+      "corr": -0.01111051687048172,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "UNH",
+      "corr": 0.042150601291841984,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "HDB",
+      "corr": 0.253150358224463,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "IBN",
+      "corr": 0.2910773367548493,
+      "same_cluster": true
+    },
+    {
+      "source": "SHOP",
+      "target": "KWEB",
+      "corr": 0.41587244715803573,
+      "same_cluster": true
+    },
+    {
+      "source": "SHOP",
+      "target": "NE",
+      "corr": 0.22283405566409709,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "HCC",
+      "corr": 0.1381268249459587,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "AMR",
+      "corr": 0.1355539175204624,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "VAL",
+      "corr": 0.21350410667806433,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "TDW",
+      "corr": 0.12347763301445586,
+      "same_cluster": false
+    },
+    {
+      "source": "SHOP",
+      "target": "BN",
+      "corr": 0.5356797830470247,
+      "same_cluster": true
+    },
+    {
+      "source": "SHOP",
+      "target": "SHV",
+      "corr": 0.058791762586447825,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "HOOD",
+      "corr": 0.40110639144016474,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "COIN",
+      "corr": 0.4297147442110737,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "JPM",
+      "corr": 0.3398183329347255,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "BRK-B",
+      "corr": 0.26271180428697705,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "MKL",
+      "corr": 0.21535269106794266,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "IBKR",
+      "corr": 0.35892792422064895,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "EFX",
+      "corr": 0.3436249568826182,
+      "same_cluster": true
+    },
+    {
+      "source": "UBER",
+      "target": "JNJ",
+      "corr": 0.004512058647910394,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "UNH",
+      "corr": 0.05697735950826574,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "HDB",
+      "corr": 0.28281754342065163,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "IBN",
+      "corr": 0.2915293343904466,
+      "same_cluster": true
+    },
+    {
+      "source": "UBER",
+      "target": "KWEB",
+      "corr": 0.37010592385168745,
+      "same_cluster": true
+    },
+    {
+      "source": "UBER",
+      "target": "NE",
+      "corr": 0.21125720018692679,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "HCC",
+      "corr": 0.13280301397111552,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "AMR",
+      "corr": 0.15799493949643192,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "VAL",
+      "corr": 0.19692796275077398,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "TDW",
+      "corr": 0.14311699245831183,
+      "same_cluster": false
+    },
+    {
+      "source": "UBER",
+      "target": "BN",
+      "corr": 0.4392307799487962,
+      "same_cluster": true
+    },
+    {
+      "source": "UBER",
+      "target": "SHV",
+      "corr": 0.0375304756008519,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "COIN",
+      "corr": 0.6038915585912706,
+      "same_cluster": true
+    },
+    {
+      "source": "HOOD",
+      "target": "JPM",
+      "corr": 0.34634116638351464,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "BRK-B",
+      "corr": 0.2039497368779179,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "MKL",
+      "corr": 0.16893998149437658,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "IBKR",
+      "corr": 0.46877541931521916,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "EFX",
+      "corr": 0.30502209758758964,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "JNJ",
+      "corr": -0.045700699608865074,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "UNH",
+      "corr": 0.07336917292628674,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "HDB",
+      "corr": 0.20612525899703535,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "IBN",
+      "corr": 0.20970469808235578,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "KWEB",
+      "corr": 0.3484069014090222,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "NE",
+      "corr": 0.23145429392480055,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "HCC",
+      "corr": 0.11538985330063906,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "AMR",
+      "corr": 0.1674610996733199,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "VAL",
+      "corr": 0.20921044781184492,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "TDW",
+      "corr": 0.15219037569157595,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "BN",
+      "corr": 0.4542008723195478,
+      "same_cluster": false
+    },
+    {
+      "source": "HOOD",
+      "target": "SHV",
+      "corr": 0.024973334192854177,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "JPM",
+      "corr": 0.35404031544512815,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "BRK-B",
+      "corr": 0.2567198161900203,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "MKL",
+      "corr": 0.14249117426838964,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "IBKR",
+      "corr": 0.4138915463350293,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "EFX",
+      "corr": 0.3566498578049521,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "JNJ",
+      "corr": -0.033386221668595735,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "UNH",
+      "corr": 0.06071974182653975,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "HDB",
+      "corr": 0.21103772499838772,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "IBN",
+      "corr": 0.2625943296294502,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "KWEB",
+      "corr": 0.31579300973003727,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "NE",
+      "corr": 0.2103082331939059,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "HCC",
+      "corr": 0.13773970320703655,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "AMR",
+      "corr": 0.17243836790175077,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "VAL",
+      "corr": 0.19445135909890682,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "TDW",
+      "corr": 0.1368408151794875,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "BN",
+      "corr": 0.4554879339777915,
+      "same_cluster": false
+    },
+    {
+      "source": "COIN",
+      "target": "SHV",
+      "corr": 0.03886887389688997,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "BRK-B",
+      "corr": 0.6295596212684715,
+      "same_cluster": true
+    },
+    {
+      "source": "JPM",
+      "target": "MKL",
+      "corr": 0.4898460162957298,
+      "same_cluster": true
+    },
+    {
+      "source": "JPM",
+      "target": "IBKR",
+      "corr": 0.539891884468421,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "EFX",
+      "corr": 0.3212361901478126,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "JNJ",
+      "corr": 0.19068134899681496,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "UNH",
+      "corr": 0.1583137346122271,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "HDB",
+      "corr": 0.338457830493997,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "IBN",
+      "corr": 0.3531443266453556,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "KWEB",
+      "corr": 0.24389989635199494,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "NE",
+      "corr": 0.35083098555122616,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "HCC",
+      "corr": 0.22595280585080466,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "AMR",
+      "corr": 0.23492347848923117,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "VAL",
+      "corr": 0.3149071422130799,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "TDW",
+      "corr": 0.267155782377488,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "BN",
+      "corr": 0.5472413083146971,
+      "same_cluster": false
+    },
+    {
+      "source": "JPM",
+      "target": "SHV",
+      "corr": -0.011648903469423712,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "MKL",
+      "corr": 0.5633189603284862,
+      "same_cluster": true
+    },
+    {
+      "source": "BRK-B",
+      "target": "IBKR",
+      "corr": 0.3344967299179682,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "EFX",
+      "corr": 0.40041262446594467,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "JNJ",
+      "corr": 0.38039103327570783,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "UNH",
+      "corr": 0.2385602203253352,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "HDB",
+      "corr": 0.31770405533973317,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "IBN",
+      "corr": 0.37641573852092464,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "KWEB",
+      "corr": 0.1620642030876021,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "NE",
+      "corr": 0.32813329916082457,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "HCC",
+      "corr": 0.19259617973457746,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "AMR",
+      "corr": 0.18450183390598093,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "VAL",
+      "corr": 0.2878715817548523,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "TDW",
+      "corr": 0.23941815410791328,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "BN",
+      "corr": 0.5092270051007903,
+      "same_cluster": false
+    },
+    {
+      "source": "BRK-B",
+      "target": "SHV",
+      "corr": 0.026696027664216995,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "IBKR",
+      "corr": 0.33081847531825537,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "EFX",
+      "corr": 0.24703846889057088,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "JNJ",
+      "corr": 0.20469807528683095,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "UNH",
+      "corr": 0.18096955719297286,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "HDB",
+      "corr": 0.23133384976285123,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "IBN",
+      "corr": 0.23251429973923482,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "KWEB",
+      "corr": 0.15610704768637054,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "NE",
+      "corr": 0.24877154476237207,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "HCC",
+      "corr": 0.18261855644245453,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "AMR",
+      "corr": 0.16783010674064236,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "VAL",
+      "corr": 0.2420330169111805,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "TDW",
+      "corr": 0.20498652701266962,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "BN",
+      "corr": 0.4091299115332789,
+      "same_cluster": false
+    },
+    {
+      "source": "MKL",
+      "target": "SHV",
+      "corr": -0.047174292227340126,
+      "same_cluster": false
+    },
+    {
+      "source": "IBKR",
+      "target": "EFX",
+      "corr": 0.23140936540808674,
+      "same_cluster": false
+    },
+    {
+      "source": "IBKR",
+      "target": "JNJ",
+      "corr": -0.004265912778218762,
+      "same_cluster": false
+    },
+    {
+      "source": "IBKR",
+      "target": "UNH",
+      "corr": 0.08997892411969331,
+      "same_cluster": true
+    },
+    {
+      "source": "IBKR",
+      "target": "HDB",
+      "corr": 0.23317997305139013,
+      "same_cluster": false
+    },
+    {
+      "source": "IBKR",
+      "target": "IBN",
+      "corr": 0.2824811015559546,
+      "same_cluster": false
+    },
+    {
+      "source": "IBKR",
+      "target": "KWEB",
+      "corr": 0.28659364384069164,
+      "same_cluster": false
+    },
+    {
+      "source": "IBKR",
+      "target": "NE",
+      "corr": 0.32536545069655814,
+      "same_cluster": false
+    },
+    {
+      "source": "IBKR",
+      "target": "HCC",
+      "corr": 0.21771924340749826,
+      "same_cluster": false
+    },
+    {
+      "source": "IBKR",
+      "target": "AMR",
+      "corr": 0.22990197705840332,
+      "same_cluster": false
+    },
+    {
+      "source": "IBKR",
+      "target": "VAL",
+      "corr": 0.2993077463726566,
+      "same_cluster": false
+    },
+    {
+      "source": "IBKR",
+      "target": "TDW",
+      "corr": 0.23745286288281975,
+      "same_cluster": false
+    },
+    {
+      "source": "IBKR",
+      "target": "BN",
+      "corr": 0.4620553990565054,
+      "same_cluster": false
+    },
+    {
+      "source": "IBKR",
+      "target": "SHV",
+      "corr": -0.09667322973993224,
+      "same_cluster": false
+    },
+    {
+      "source": "EFX",
+      "target": "JNJ",
+      "corr": 0.14915034068067645,
+      "same_cluster": false
+    },
+    {
+      "source": "EFX",
+      "target": "UNH",
+      "corr": 0.14300229029964945,
+      "same_cluster": false
+    },
+    {
+      "source": "EFX",
+      "target": "HDB",
+      "corr": 0.2751123992788991,
+      "same_cluster": false
+    },
+    {
+      "source": "EFX",
+      "target": "IBN",
+      "corr": 0.2884545126609268,
+      "same_cluster": true
+    },
+    {
+      "source": "EFX",
+      "target": "KWEB",
+      "corr": 0.225232289593956,
+      "same_cluster": true
+    },
+    {
+      "source": "EFX",
+      "target": "NE",
+      "corr": 0.2320896267998637,
+      "same_cluster": false
+    },
+    {
+      "source": "EFX",
+      "target": "HCC",
+      "corr": 0.09419142452050853,
+      "same_cluster": false
+    },
+    {
+      "source": "EFX",
+      "target": "AMR",
+      "corr": 0.11658756864116773,
+      "same_cluster": false
+    },
+    {
+      "source": "EFX",
+      "target": "VAL",
+      "corr": 0.2212485107242916,
+      "same_cluster": false
+    },
+    {
+      "source": "EFX",
+      "target": "TDW",
+      "corr": 0.14779403179749975,
+      "same_cluster": false
+    },
+    {
+      "source": "EFX",
+      "target": "BN",
+      "corr": 0.5579126533144876,
+      "same_cluster": true
+    },
+    {
+      "source": "EFX",
+      "target": "SHV",
+      "corr": 0.12753167887234684,
+      "same_cluster": false
+    },
+    {
+      "source": "JNJ",
+      "target": "UNH",
+      "corr": 0.20432426993324326,
+      "same_cluster": false
+    },
+    {
+      "source": "JNJ",
+      "target": "HDB",
+      "corr": 0.17291021592469943,
+      "same_cluster": false
+    },
+    {
+      "source": "JNJ",
+      "target": "IBN",
+      "corr": 0.20072187031016625,
+      "same_cluster": false
+    },
+    {
+      "source": "JNJ",
+      "target": "KWEB",
+      "corr": 0.0028156658548974915,
+      "same_cluster": false
+    },
+    {
+      "source": "JNJ",
+      "target": "NE",
+      "corr": 0.026106070263453157,
+      "same_cluster": false
+    },
+    {
+      "source": "JNJ",
+      "target": "HCC",
+      "corr": 0.01893379753920013,
+      "same_cluster": false
+    },
+    {
+      "source": "JNJ",
+      "target": "AMR",
+      "corr": -0.020891168892372414,
+      "same_cluster": false
+    },
+    {
+      "source": "JNJ",
+      "target": "VAL",
+      "corr": 0.022078439692023277,
+      "same_cluster": false
+    },
+    {
+      "source": "JNJ",
+      "target": "TDW",
+      "corr": 0.0007189567559003648,
+      "same_cluster": false
+    },
+    {
+      "source": "JNJ",
+      "target": "BN",
+      "corr": 0.12249424784249646,
+      "same_cluster": false
+    },
+    {
+      "source": "JNJ",
+      "target": "SHV",
+      "corr": 0.1188489751735478,
+      "same_cluster": false
+    },
+    {
+      "source": "UNH",
+      "target": "HDB",
+      "corr": 0.04927574473339779,
+      "same_cluster": false
+    },
+    {
+      "source": "UNH",
+      "target": "IBN",
+      "corr": 0.05331864172396234,
+      "same_cluster": false
+    },
+    {
+      "source": "UNH",
+      "target": "KWEB",
+      "corr": 0.04816611957323859,
+      "same_cluster": false
+    },
+    {
+      "source": "UNH",
+      "target": "NE",
+      "corr": 0.11708886914906885,
+      "same_cluster": false
+    },
+    {
+      "source": "UNH",
+      "target": "HCC",
+      "corr": 0.05860649796651539,
+      "same_cluster": false
+    },
+    {
+      "source": "UNH",
+      "target": "AMR",
+      "corr": 0.04945717271613741,
+      "same_cluster": false
+    },
+    {
+      "source": "UNH",
+      "target": "VAL",
+      "corr": 0.10577364580782558,
+      "same_cluster": false
+    },
+    {
+      "source": "UNH",
+      "target": "TDW",
+      "corr": 0.05712043820105309,
+      "same_cluster": false
+    },
+    {
+      "source": "UNH",
+      "target": "BN",
+      "corr": 0.13024038767271237,
+      "same_cluster": false
+    },
+    {
+      "source": "UNH",
+      "target": "SHV",
+      "corr": 0.007250229969174436,
+      "same_cluster": false
+    },
+    {
+      "source": "HDB",
+      "target": "IBN",
+      "corr": 0.6434938897281708,
+      "same_cluster": false
+    },
+    {
+      "source": "HDB",
+      "target": "KWEB",
+      "corr": 0.24907314275550788,
+      "same_cluster": false
+    },
+    {
+      "source": "HDB",
+      "target": "NE",
+      "corr": 0.13255119941889051,
+      "same_cluster": false
+    },
+    {
+      "source": "HDB",
+      "target": "HCC",
+      "corr": 0.10841118680277363,
+      "same_cluster": false
+    },
+    {
+      "source": "HDB",
+      "target": "AMR",
+      "corr": 0.07902090491343242,
+      "same_cluster": false
+    },
+    {
+      "source": "HDB",
+      "target": "VAL",
+      "corr": 0.11777718149195031,
+      "same_cluster": false
+    },
+    {
+      "source": "HDB",
+      "target": "TDW",
+      "corr": 0.08440181591183359,
+      "same_cluster": false
+    },
+    {
+      "source": "HDB",
+      "target": "BN",
+      "corr": 0.3597677824292951,
+      "same_cluster": false
+    },
+    {
+      "source": "HDB",
+      "target": "SHV",
+      "corr": 0.038658750745752694,
+      "same_cluster": false
+    },
+    {
+      "source": "IBN",
+      "target": "KWEB",
+      "corr": 0.22639269886386995,
+      "same_cluster": true
+    },
+    {
+      "source": "IBN",
+      "target": "NE",
+      "corr": 0.14464088472258252,
+      "same_cluster": false
+    },
+    {
+      "source": "IBN",
+      "target": "HCC",
+      "corr": 0.130643394400396,
+      "same_cluster": false
+    },
+    {
+      "source": "IBN",
+      "target": "AMR",
+      "corr": 0.11633894144420066,
+      "same_cluster": false
+    },
+    {
+      "source": "IBN",
+      "target": "VAL",
+      "corr": 0.13714067306529945,
+      "same_cluster": false
+    },
+    {
+      "source": "IBN",
+      "target": "TDW",
+      "corr": 0.10723511724190395,
+      "same_cluster": false
+    },
+    {
+      "source": "IBN",
+      "target": "BN",
+      "corr": 0.3907792541152854,
+      "same_cluster": true
+    },
+    {
+      "source": "IBN",
+      "target": "SHV",
+      "corr": 0.006228788342162147,
+      "same_cluster": false
+    },
+    {
+      "source": "KWEB",
+      "target": "NE",
+      "corr": 0.18695583978552993,
+      "same_cluster": false
+    },
+    {
+      "source": "KWEB",
+      "target": "HCC",
+      "corr": 0.1561297930433291,
+      "same_cluster": false
+    },
+    {
+      "source": "KWEB",
+      "target": "AMR",
+      "corr": 0.15437332635370182,
+      "same_cluster": false
+    },
+    {
+      "source": "KWEB",
+      "target": "VAL",
+      "corr": 0.216546400235193,
+      "same_cluster": false
+    },
+    {
+      "source": "KWEB",
+      "target": "TDW",
+      "corr": 0.09828295513862935,
+      "same_cluster": false
+    },
+    {
+      "source": "KWEB",
+      "target": "BN",
+      "corr": 0.3867651793133469,
+      "same_cluster": true
+    },
+    {
+      "source": "KWEB",
+      "target": "SHV",
+      "corr": 0.04840121989851921,
+      "same_cluster": false
+    },
+    {
+      "source": "NE",
+      "target": "HCC",
+      "corr": 0.33841875214533934,
+      "same_cluster": true
+    },
+    {
+      "source": "NE",
+      "target": "AMR",
+      "corr": 0.35210168813105963,
+      "same_cluster": true
+    },
+    {
+      "source": "NE",
+      "target": "VAL",
+      "corr": 0.8026171472547226,
+      "same_cluster": true
+    },
+    {
+      "source": "NE",
+      "target": "TDW",
+      "corr": 0.6410751330549281,
+      "same_cluster": true
+    },
+    {
+      "source": "NE",
+      "target": "BN",
+      "corr": 0.37391274536986163,
+      "same_cluster": false
+    },
+    {
+      "source": "NE",
+      "target": "SHV",
+      "corr": -0.06329895547572001,
+      "same_cluster": false
+    },
+    {
+      "source": "HCC",
+      "target": "AMR",
+      "corr": 0.710632736316462,
+      "same_cluster": true
+    },
+    {
+      "source": "HCC",
+      "target": "VAL",
+      "corr": 0.34662646139560876,
+      "same_cluster": true
+    },
+    {
+      "source": "HCC",
+      "target": "TDW",
+      "corr": 0.303812350171204,
+      "same_cluster": true
+    },
+    {
+      "source": "HCC",
+      "target": "BN",
+      "corr": 0.22591558012190918,
+      "same_cluster": false
+    },
+    {
+      "source": "HCC",
+      "target": "SHV",
+      "corr": -0.016017134193582756,
+      "same_cluster": false
+    },
+    {
+      "source": "AMR",
+      "target": "VAL",
+      "corr": 0.35856130230685157,
+      "same_cluster": true
+    },
+    {
+      "source": "AMR",
+      "target": "TDW",
+      "corr": 0.3490473048610832,
+      "same_cluster": true
+    },
+    {
+      "source": "AMR",
+      "target": "BN",
+      "corr": 0.2547107992112639,
+      "same_cluster": false
+    },
+    {
+      "source": "AMR",
+      "target": "SHV",
+      "corr": -0.0575535827717753,
+      "same_cluster": false
+    },
+    {
+      "source": "VAL",
+      "target": "TDW",
+      "corr": 0.6453050105812692,
+      "same_cluster": true
+    },
+    {
+      "source": "VAL",
+      "target": "BN",
+      "corr": 0.37202423089667325,
+      "same_cluster": false
+    },
+    {
+      "source": "VAL",
+      "target": "SHV",
+      "corr": -0.08765747058589828,
+      "same_cluster": false
+    },
+    {
+      "source": "TDW",
+      "target": "BN",
+      "corr": 0.2844268836311105,
+      "same_cluster": false
+    },
+    {
+      "source": "TDW",
+      "target": "SHV",
+      "corr": -0.09612244090880442,
+      "same_cluster": false
+    },
+    {
+      "source": "BN",
+      "target": "SHV",
+      "corr": 0.05118886716732984,
+      "same_cluster": false
+    }
+  ]
 }

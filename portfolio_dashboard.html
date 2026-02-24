@@ -6,433 +6,371 @@
 <title>EEIF | Portfolio Optimizer</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0"></script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
-  :root {
-    --bg: #0B0E11; --surface: #141820; --surface2: #1A2030;
-    --border: #252D3A; --text: #E8ECF1; --text2: #8899AA;
-    --accent: #E8453C; --accent2: #3B82F6; --green: #10B981;
-    --amber: #F59E0B; --purple: #8B5CF6; --pink: #EC4899;
-    --cyan: #06B6D4; --orange: #F97316;
-  }
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; }
-
-  .header {
-    padding: 24px 40px; display:flex; justify-content:space-between; align-items:center;
-    border-bottom: 1px solid var(--border); background: var(--surface);
-  }
-  .header h1 { font-size:20px; font-weight:700; letter-spacing:-0.5px; }
-  .header h1 span { color: var(--accent); }
-  .header-meta { font-size:12px; color:var(--text2); font-family:'JetBrains Mono',monospace; }
-
-  .tabs {
-    display:flex; gap:0; padding:0 40px; background:var(--surface);
-    border-bottom:1px solid var(--border);
-  }
-  .tab {
-    padding:12px 24px; font-size:13px; font-weight:500; cursor:pointer;
-    color:var(--text2); border-bottom:2px solid transparent; transition: all 0.2s;
-  }
-  .tab:hover { color:var(--text); }
-  .tab.active { color:var(--accent); border-bottom-color:var(--accent); }
-
-  .view { display:none; padding:32px 40px; }
-  .view.active { display:block; }
-
-  .grid { display:grid; gap:20px; }
-  .grid-2 { grid-template-columns: 1fr 1fr; }
-  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
-  .grid-23 { grid-template-columns: 2fr 3fr; }
-
-  .card {
-    background:var(--surface); border:1px solid var(--border);
-    border-radius:12px; padding:20px; position:relative; overflow:hidden;
-  }
-  .card-title {
-    font-size:11px; text-transform:uppercase; letter-spacing:1.5px;
-    color:var(--text2); margin-bottom:16px; font-weight:500;
-  }
-
-  .stat-row { display:flex; gap:16px; margin-bottom:20px; }
-  .stat {
-    flex:1; background:var(--surface); border:1px solid var(--border);
-    border-radius:10px; padding:16px;
-  }
-  .stat-label { font-size:11px; color:var(--text2); text-transform:uppercase; letter-spacing:1px; }
-  .stat-value { font-size:28px; font-weight:700; margin-top:4px; font-family:'JetBrains Mono',monospace; }
-  .stat-sub { font-size:11px; color:var(--text2); margin-top:2px; }
-  .stat-value.green { color:var(--green); }
-  .stat-value.red { color:var(--accent); }
-
-  table { width:100%; border-collapse:collapse; font-size:13px; }
-  th { text-align:left; padding:10px 12px; color:var(--text2); font-size:11px;
-       text-transform:uppercase; letter-spacing:1px; border-bottom:1px solid var(--border); font-weight:500; }
-  td { padding:10px 12px; border-bottom:1px solid var(--border); font-family:'JetBrains Mono',monospace; font-size:12px; }
-  tr:hover { background:var(--surface2); }
-
-  .badge {
-    display:inline-block; padding:2px 8px; border-radius:4px;
-    font-size:10px; font-weight:500; font-family:'JetBrains Mono',monospace;
-  }
-  .buy { color:#10B981; } .sell { color:#E8453C; }
-
-  .chart-container { position:relative; width:100%; }
-  .chart-container.pie { max-width:320px; margin:0 auto; }
-  .chart-container.bar { height:400px; }
-
-  .cluster-tag {
-    display:inline-block; padding:3px 10px; border-radius:6px;
-    font-size:11px; font-family:'JetBrains Mono',monospace; font-weight:500;
-  }
-
-  .tech-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  .corr-canvas { width:100%!important; height:auto!important; image-rendering:pixelated; }
-
-  .footer {
-    padding:16px 40px; text-align:center; font-size:11px; color:var(--text2);
-    border-top:1px solid var(--border); margin-top:40px;
-  }
-
-  @media(max-width:900px) {
-    .grid-2,.grid-3,.grid-23,.tech-grid { grid-template-columns:1fr; }
-    .stat-row { flex-direction:column; }
-    .view { padding:20px; }
-  }
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  :root{--bg:#0B0E11;--s1:#131820;--s2:#1A2030;--s3:#212A3A;--bdr:#252D3A;--t1:#E8ECF1;--t2:#8899AA;--t3:#556677;--red:#E8453C;--blue:#3B82F6;--green:#10B981;--amber:#F59E0B;--purple:#8B5CF6;--pink:#EC4899;--cyan:#06B6D4;--orange:#F97316;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+  .hdr{padding:20px 36px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--bdr);background:var(--s1);}
+  .hdr h1{font-size:18px;font-weight:700;letter-spacing:-0.3px;} .hdr h1 b{color:var(--red);}
+  .hdr-r{font:12px/1 'JetBrains Mono',monospace;color:var(--t2);}
+  .tabs{display:flex;gap:0;padding:0 36px;background:var(--s1);border-bottom:1px solid var(--bdr);}
+  .tab{padding:11px 22px;font-size:12px;font-weight:600;cursor:pointer;color:var(--t2);border-bottom:2px solid transparent;transition:all .15s;text-transform:uppercase;letter-spacing:.8px;}
+  .tab:hover{color:var(--t1);} .tab.on{color:var(--red);border-color:var(--red);}
+  .vw{display:none;padding:28px 36px;} .vw.on{display:block;}
+  .cd{background:var(--s1);border:1px solid var(--bdr);border-radius:10px;padding:18px;position:relative;}
+  .cd-t{font:11px/1 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1.5px;color:var(--t2);margin-bottom:14px;}
+  .g{display:grid;gap:16px;} .g2{grid-template-columns:1fr 1fr;} .g3{grid-template-columns:1fr 1fr 1fr;} .g-map{grid-template-columns:3fr 2fr;} .mb{margin-bottom:16px;}
+  .stats{display:flex;gap:12px;margin-bottom:18px;flex-wrap:wrap;}
+  .st{flex:1;min-width:130px;background:var(--s1);border:1px solid var(--bdr);border-radius:8px;padding:14px;}
+  .st-l{font:10px/1 'JetBrains Mono',monospace;color:var(--t2);text-transform:uppercase;letter-spacing:1px;}
+  .st-v{font:26px/1.2 'JetBrains Mono',monospace;font-weight:600;margin-top:6px;}
+  .st-s{font-size:10px;color:var(--t2);margin-top:3px;}
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  th{text-align:left;padding:9px 10px;color:var(--t3);font:10px/1 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--bdr);}
+  td{padding:8px 10px;border-bottom:1px solid var(--bdr);font:12px/1.4 'JetBrains Mono',monospace;}
+  tr:hover{background:var(--s2);} .r{text-align:right;} .buy{color:var(--green);} .sell{color:var(--red);}
+  .badge{display:inline-block;padding:2px 8px;border-radius:4px;font:10px/1.4 'JetBrains Mono',monospace;font-weight:500;}
+  #mapCanvas{width:100%;border-radius:8px;background:var(--bg);}
+  .map-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .map-leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--t2);}
+  .map-leg-dot{width:10px;height:10px;border-radius:50%;}
+  .ed-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--bdr);}
+  .ed-row:last-child{border:none;}
+  .ed-name{flex:1;font-size:12px;min-width:100px;}
+  .ed-tick{width:50px;font:11px/1 'JetBrains Mono',monospace;color:var(--t2);}
+  .ed-input{width:70px;background:var(--s2);border:1px solid var(--bdr);border-radius:4px;padding:5px 8px;color:var(--t1);font:12px/1 'JetBrains Mono',monospace;text-align:right;}
+  .ed-input:focus{border-color:var(--red);outline:none;}
+  .ed-val{width:90px;text-align:right;font:11px/1 'JetBrains Mono',monospace;color:var(--t2);}
+  .ed-cl{width:40px;text-align:center;}
+  .ed-actions{display:flex;gap:6px;margin-top:12px;}
+  .btn{padding:8px 16px;border-radius:6px;border:1px solid var(--bdr);background:var(--s2);color:var(--t1);font:12px/1 'DM Sans',sans-serif;font-weight:600;cursor:pointer;transition:all .15s;}
+  .btn:hover{background:var(--s3);} .btn-red{background:var(--red);border-color:var(--red);color:white;} .btn-red:hover{background:#c93830;}
+  .add-row{display:flex;gap:6px;margin-top:10px;}
+  .add-input{flex:1;background:var(--s2);border:1px solid var(--bdr);border-radius:4px;padding:6px 10px;color:var(--t1);font:12px/1 'JetBrains Mono',monospace;}
+  .add-input:focus{border-color:var(--red);outline:none;}
+  .footer{padding:14px 36px;text-align:center;font-size:10px;color:var(--t3);border-top:1px solid var(--bdr);margin-top:32px;}
+  @media(max-width:1000px){.g2,.g3,.g-map{grid-template-columns:1fr;}.stats{flex-direction:column;}}
 </style>
 </head>
 <body>
-
-<div class="header">
-  <h1><span>EEIF</span> Portfolio Optimizer</h1>
-  <div class="header-meta" id="headerMeta">Loading...</div>
-</div>
-
+<div class="hdr"><h1><b>EEIF</b> Portfolio Optimizer</h1><div class="hdr-r" id="hMeta">Loading...</div></div>
 <div class="tabs">
-  <div class="tab active" data-view="portfolio">Portfolio View</div>
-  <div class="tab" data-view="technical">Technical View</div>
+  <div class="tab on" data-v="dash">Dashboard</div>
+  <div class="tab" data-v="editor">Position Editor</div>
+  <div class="tab" data-v="tech">Technical</div>
 </div>
 
-<!-- ==================== PORTFOLIO VIEW ==================== -->
-<div class="view active" id="view-portfolio">
-
-  <div class="stat-row" id="statRow"></div>
-
-  <div class="grid grid-23" style="margin-bottom:20px">
-    <div class="card">
-      <div class="card-title">Current Allocation</div>
-      <div class="chart-container pie"><canvas id="pieCurrent"></canvas></div>
-    </div>
-    <div class="card">
-      <div class="card-title">HRP Recommended Allocation</div>
-      <div class="chart-container pie"><canvas id="pieHRP"></canvas></div>
-    </div>
+<!-- DASHBOARD -->
+<div class="vw on" id="v-dash">
+  <div class="stats" id="stats"></div>
+  <div class="cd mb"><div class="cd-t">Cluster Map — Your Portfolio in Market Space</div><canvas id="mapCanvas" height="520"></canvas><div class="map-legend" id="mapLegend"></div></div>
+  <div class="g g2 mb">
+    <div class="cd"><div class="cd-t">Current Allocation</div><div style="max-width:360px;margin:0 auto"><canvas id="pieCur"></canvas></div></div>
+    <div class="cd"><div class="cd-t">HRP Recommended</div><div style="max-width:360px;margin:0 auto"><canvas id="pieHRP"></canvas></div></div>
   </div>
-
-  <div class="grid grid-2" style="margin-bottom:20px">
-    <div class="card">
-      <div class="card-title">Risk by Cluster</div>
-      <div class="chart-container" style="height:300px"><canvas id="riskByCluster"></canvas></div>
-    </div>
-    <div class="card">
-      <div class="card-title">Current vs Recommended Weights</div>
-      <div class="chart-container" style="height:300px"><canvas id="weightCompare"></canvas></div>
-    </div>
+  <div class="g g2 mb">
+    <div class="cd"><div class="cd-t">Risk by Cluster</div><div style="height:280px"><canvas id="riskCl"></canvas></div></div>
+    <div class="cd"><div class="cd-t">Weight Comparison</div><div style="height:280px"><canvas id="wCmp"></canvas></div></div>
   </div>
+  <div class="cd mb"><div class="cd-t">Trade Recommendations</div><table><thead><tr><th>Position</th><th>Ticker</th><th>Cluster</th><th class="r">Current</th><th class="r">Target</th><th class="r">Action</th><th class="r">Amount</th></tr></thead><tbody id="tradeTb"></tbody></table></div>
+  <div class="cd"><div class="cd-t">Risk Metrics</div><table><thead><tr><th>Metric</th><th class="r">Current</th><th class="r">HRP</th><th class="r">Equal Wt</th></tr></thead><tbody id="riskTb"></tbody></table></div>
+</div>
 
-  <div class="card" style="margin-bottom:20px">
-    <div class="card-title">Recommended Trades</div>
-    <table id="tradeTable">
-      <thead><tr>
-        <th>Position</th><th>Ticker</th><th>Cluster</th>
-        <th style="text-align:right">Current %</th>
-        <th style="text-align:right">Target %</th>
-        <th style="text-align:right">Action</th>
-        <th style="text-align:right">Amount</th>
-      </tr></thead>
-      <tbody></tbody>
-    </table>
-  </div>
-
-  <div class="card">
-    <div class="card-title">Risk Comparison</div>
-    <table id="riskTable">
-      <thead><tr><th>Metric</th><th style="text-align:right">Current</th><th style="text-align:right">HRP</th><th style="text-align:right">Equal Wt</th></tr></thead>
-      <tbody></tbody>
-    </table>
+<!-- EDITOR -->
+<div class="vw" id="v-editor">
+  <div class="g g-map">
+    <div class="cd">
+      <div class="cd-t">Edit Holdings</div>
+      <div style="font-size:11px;color:var(--t2);margin-bottom:14px">Adjust share counts. Click <b>Recalculate</b> to update the dashboard. This reweights using existing HRP targets — to fully re-optimize with new positions, update the Python script and re-run.</div>
+      <div id="edRows"></div>
+      <div class="add-row"><input class="add-input" id="addT" placeholder="TICKER"><input class="add-input" id="addN" placeholder="Name"><input class="add-input" id="addS" placeholder="Shares" style="width:80px"><button class="btn" onclick="addPos()">+ Add</button></div>
+      <div class="ed-actions"><button class="btn btn-red" onclick="recalc()">Recalculate Weights</button><button class="btn" onclick="resetPos()">Reset</button></div>
+    </div>
+    <div>
+      <div class="cd mb"><div class="cd-t">Live Preview</div><div style="max-width:340px;margin:0 auto"><canvas id="pieLive"></canvas></div></div>
+      <div class="cd"><div class="cd-t">Summary</div><div id="edSum" style="font:13px/2.2 'JetBrains Mono',monospace"></div></div>
+    </div>
   </div>
 </div>
 
-<!-- ==================== TECHNICAL VIEW ==================== -->
-<div class="view" id="view-technical">
-
-  <div class="grid grid-2" style="margin-bottom:20px">
-    <div class="card">
-      <div class="card-title">Eigenvalues of Graph Laplacian</div>
-      <div class="chart-container" style="height:280px"><canvas id="eigenChart"></canvas></div>
-    </div>
-    <div class="card">
-      <div class="card-title">Sigma Sweep (Cluster Stability)</div>
-      <div class="chart-container" style="height:280px"><canvas id="sigmaChart"></canvas></div>
-    </div>
+<!-- TECHNICAL -->
+<div class="vw" id="v-tech">
+  <div class="g g2 mb">
+    <div class="cd"><div class="cd-t">Eigenvalues</div><div style="height:260px"><canvas id="eigCh"></canvas></div></div>
+    <div class="cd"><div class="cd-t">Sigma Sweep</div><div style="height:260px"><canvas id="sigCh"></canvas></div></div>
   </div>
-
-  <div class="grid grid-2" style="margin-bottom:20px">
-    <div class="card">
-      <div class="card-title">Portfolio Correlation Matrix (Cluster-Sorted)</div>
-      <canvas id="corrMatrix" class="corr-canvas"></canvas>
-    </div>
-    <div class="card">
-      <div class="card-title">Market Factor Removal</div>
-      <div style="padding:20px 0">
-        <div id="mfStats" style="font-family:'JetBrains Mono',monospace; font-size:13px; line-height:2.2"></div>
-      </div>
-    </div>
+  <div class="g g2 mb">
+    <div class="cd"><div class="cd-t">Correlation Matrix (Cluster-Sorted)</div><canvas id="corrCv" style="width:100%;border-radius:6px;image-rendering:pixelated"></canvas></div>
+    <div class="cd"><div class="cd-t">Market Factor Removal</div><div id="mfInfo" style="padding:8px 0"></div></div>
   </div>
-
-  <div class="card">
-    <div class="card-title">All Training Clusters</div>
-    <table id="clusterTable">
-      <thead><tr><th>Cluster</th><th>Stocks</th><th>Top Sectors</th><th>Your Positions</th></tr></thead>
-      <tbody></tbody>
-    </table>
-  </div>
+  <div class="cd"><div class="cd-t">All Training Clusters</div><table><thead><tr><th>ID</th><th>Stocks</th><th>Sectors</th><th>Markets</th><th>Your Positions</th></tr></thead><tbody id="clTb"></tbody></table></div>
 </div>
 
-<div class="footer">
-  HRP + Spectral Clustering (von Luxburg / Lopez de Prado) | Pocket Aces Investment Club | Emory University
-</div>
+<div class="footer">HRP + Spectral Clustering | von Luxburg (2007) / Lopez de Prado (2016) | EEIF, Emory University</div>
 
 <script>
-const COLORS = ['#E8453C','#3B82F6','#10B981','#F59E0B','#8B5CF6',
-  '#EC4899','#06B6D4','#F97316','#A3E635','#FB923C',
-  '#818CF8','#F472B6','#34D399','#FBBF24','#F87171'];
+const CL=['#E8453C','#3B82F6','#10B981','#F59E0B','#8B5CF6','#EC4899','#06B6D4','#F97316','#A3E635','#FB923C','#818CF8','#F472B6','#34D399','#FBBF24','#F87171','#94A3B8'];
+let D,LP,CH={};
+const pct=v=>(v*100).toFixed(2)+'%';
+const dol=v=>'$'+Math.abs(v).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
 
-function fmt(v, type) {
-  if (type === '%') return (v*100).toFixed(2) + '%';
-  if (type === '$') return '$' + Math.abs(v).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
-  if (type === 'n') return v.toFixed(1);
-  return v.toString();
+async function init(){
+  try{D=await(await fetch('portfolio_results.json')).json();}
+  catch(e){document.body.innerHTML='<div style="padding:80px;text-align:center;color:var(--red)"><h2>Cannot load portfolio_results.json</h2><p style="color:#889;margin-top:12px">Run portfolio_optimizer.py first.</p></div>';return;}
+  LP=JSON.parse(JSON.stringify(D.positions));
+  document.getElementById('hMeta').textContent=`${D.n_positions} positions | $${D.total_value.toLocaleString('en-US',{maximumFractionDigits:0})} | ${D.date_range}`;
+  buildDash(); buildEd(); buildTech();
 }
 
-async function init() {
-  let data;
-  try {
-    const resp = await fetch('portfolio_results.json');
-    data = await resp.json();
-  } catch(e) {
-    document.body.innerHTML = '<div style="padding:60px;text-align:center;color:#E8453C;font-size:18px">Could not load portfolio_results.json<br><br><span style="color:#8899AA;font-size:14px">Run portfolio_optimizer.py first, then open this file in the same directory.</span></div>';
-    return;
+function buildDash(){
+  const vd=D.risk_hrp.vol-D.risk_current.vol;
+  const uc=new Set(D.positions.map(p=>p.cluster)).size;
+  document.getElementById('stats').innerHTML=[
+    ['Portfolio',`$${(D.total_value/1000).toFixed(1)}k`,''],
+    ['Current Vol',pct(D.risk_current.vol),'red'],
+    ['HRP Vol',pct(D.risk_hrp.vol),'green',`${(vd*100).toFixed(1)}pp reduction`],
+    ['Diversification',D.risk_hrp.div.toFixed(2)+'x','',`vs ${D.risk_current.div.toFixed(2)}x`],
+    ['Clusters',`${uc} / ${D.n_clusters}`,'',''],
+  ].map(([l,v,c,s])=>`<div class="st"><div class="st-l">${l}</div><div class="st-v"${c?` style="color:var(--${c})"`:``}>${v}</div>${s?`<div class="st-s">${s}</div>`:``}</div>`).join('');
+  drawMap(); drawPies(); drawRisk(); drawWeight(); fillTrades(); fillRiskTbl();
+}
+
+// ===== CLUSTER MAP =====
+function drawMap(){
+  const cv=document.getElementById('mapCanvas');
+  const W=cv.parentElement.clientWidth-36;
+  const H=520; cv.width=W*2; cv.height=H*2; cv.style.width=W+'px'; cv.style.height=H+'px';
+  const ctx=cv.getContext('2d'); ctx.scale(2,2);
+  // Build nodes
+  const nodes=D.positions.map(p=>({...p,x:W/2+(Math.random()-.5)*W*.5,y:H/2+(Math.random()-.5)*H*.5,vx:0,vy:0,
+    r:Math.max(16,Math.sqrt(p.current_weight)*130)}));
+  // Simulate
+  for(let it=0;it<400;it++){
+    for(let i=0;i<nodes.length;i++) for(let j=i+1;j<nodes.length;j++){
+      let dx=nodes[j].x-nodes[i].x,dy=nodes[j].y-nodes[i].y,d=Math.sqrt(dx*dx+dy*dy)||1;
+      // Repel all
+      let f=900/(d*d); nodes[i].vx-=f*dx/d; nodes[i].vy-=f*dy/d; nodes[j].vx+=f*dx/d; nodes[j].vy+=f*dy/d;
+      // Attract same cluster
+      if(nodes[i].cluster===nodes[j].cluster){let a=(d-55)*.01;nodes[i].vx+=a*dx/d;nodes[i].vy+=a*dy/d;nodes[j].vx-=a*dx/d;nodes[j].vy-=a*dy/d;}
+      // Extra repel different clusters if close
+      else if(d<140){let r=(140-d)*.015;nodes[i].vx-=r*dx/d;nodes[i].vy-=r*dy/d;nodes[j].vx+=r*dx/d;nodes[j].vy+=r*dy/d;}
+    }
+    for(let n of nodes){n.vx+=(W/2-n.x)*.0008;n.vy+=(H/2-n.y)*.0008;n.vx*=.82;n.vy*=.82;
+      n.x+=n.vx;n.y+=n.vy;n.x=Math.max(n.r+8,Math.min(W-n.r-8,n.x));n.y=Math.max(n.r+8,Math.min(H-n.r-8,n.y));}
   }
-
-  // Header
-  document.getElementById('headerMeta').textContent =
-    `${data.n_positions} positions | $${(data.total_value).toLocaleString('en-US',{maximumFractionDigits:0})} | ${data.date_range}`;
-
-  // Stats
-  const volDelta = data.risk_hrp.vol - data.risk_current.vol;
-  document.getElementById('statRow').innerHTML = `
-    <div class="stat"><div class="stat-label">Portfolio Value</div>
-      <div class="stat-value">$${(data.total_value/1000).toFixed(1)}k</div></div>
-    <div class="stat"><div class="stat-label">Current Volatility</div>
-      <div class="stat-value red">${fmt(data.risk_current.vol,'%')}</div></div>
-    <div class="stat"><div class="stat-label">HRP Volatility</div>
-      <div class="stat-value green">${fmt(data.risk_hrp.vol,'%')}</div>
-      <div class="stat-sub">${(volDelta*100).toFixed(2)}pp reduction</div></div>
-    <div class="stat"><div class="stat-label">Diversification</div>
-      <div class="stat-value">${data.risk_hrp.div.toFixed(2)}x</div>
-      <div class="stat-sub">vs ${data.risk_current.div.toFixed(2)}x current</div></div>
-    <div class="stat"><div class="stat-label">Clusters Used</div>
-      <div class="stat-value">${new Set(data.positions.map(p=>p.cluster)).size}</div>
-      <div class="stat-sub">of ${data.n_clusters} total</div></div>
-  `;
-
-  // Pie charts
-  const clusterGroups = {};
-  data.positions.forEach(p => {
-    const key = `C${p.cluster} ${p.cluster_label}`;
-    if (!clusterGroups[key]) clusterGroups[key] = {cur:0, hrp:0, color: COLORS[(p.cluster-1)%COLORS.length]};
-    clusterGroups[key].cur += p.current_weight;
-    clusterGroups[key].hrp += p.hrp_weight;
+  ctx.clearRect(0,0,W,H);
+  // Cluster hulls
+  const cg={};nodes.forEach(n=>{if(!cg[n.cluster])cg[n.cluster]=[];cg[n.cluster].push(n);});
+  Object.entries(cg).forEach(([c,ns])=>{
+    if(ns.length<2)return;
+    const cx=ns.reduce((s,n)=>s+n.x,0)/ns.length,cy=ns.reduce((s,n)=>s+n.y,0)/ns.length;
+    const mr=Math.max(...ns.map(n=>Math.sqrt((n.x-cx)**2+(n.y-cy)**2)))+55;
+    const col=CL[(c-1)%CL.length];
+    // Blob
+    ctx.beginPath();ctx.arc(cx,cy,mr,0,Math.PI*2);ctx.fillStyle=col+'0D';ctx.fill();ctx.strokeStyle=col+'25';ctx.lineWidth=1.5;ctx.setLineDash([4,4]);ctx.stroke();ctx.setLineDash([]);
+    // Cluster label
+    ctx.fillStyle=col+'90';ctx.font="bold 11px 'JetBrains Mono',monospace";ctx.textAlign='center';
+    const clObj=D.all_clusters.find(x=>x.id==c);
+    ctx.fillText(`C${c}: ${clObj?clObj.label:''}`,cx,cy-mr+14);
   });
-
-  const pieLabels = Object.keys(clusterGroups);
-  const pieCurData = pieLabels.map(l => clusterGroups[l].cur*100);
-  const pieHRPData = pieLabels.map(l => clusterGroups[l].hrp*100);
-  const pieColors = pieLabels.map(l => clusterGroups[l].color);
-
-  const pieOpts = {
-    responsive:true, maintainAspectRatio:true,
-    plugins:{legend:{position:'right',labels:{color:'#8899AA',font:{size:10,family:'JetBrains Mono'},padding:8, boxWidth:12}},
-    tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${ctx.raw.toFixed(1)}%`}}}
-  };
-
-  new Chart('pieCurrent', {type:'pie', data:{labels:pieLabels, datasets:[{data:pieCurData, backgroundColor:pieColors, borderWidth:0}]}, options:pieOpts});
-  new Chart('pieHRP', {type:'pie', data:{labels:pieLabels, datasets:[{data:pieHRPData, backgroundColor:pieColors, borderWidth:0}]}, options:pieOpts});
-
-  // Risk by cluster
-  const activeRisk = data.cluster_risk.filter(c => c.n_positions > 0);
-  new Chart('riskByCluster', {
-    type: 'bar',
-    data: {
-      labels: activeRisk.map(c => `C${c.cluster}`),
-      datasets: [
-        {label:'Current', data:activeRisk.map(c=>c.current_risk*100), backgroundColor:'#666', borderRadius:4},
-        {label:'HRP', data:activeRisk.map(c=>c.hrp_risk*100), backgroundColor:'#E8453C', borderRadius:4},
-      ]
-    },
-    options: {
-      responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{labels:{color:'#8899AA',font:{size:11}}}},
-      scales:{x:{ticks:{color:'#666'}},y:{ticks:{color:'#666',callback:v=>v+'%'},grid:{color:'#1A2030'}}}
-    }
+  // Edges
+  (D.edges||[]).forEach(e=>{
+    if(!e.same_cluster||e.corr<.25)return;
+    const a=nodes.find(n=>n.ticker===e.source),b=nodes.find(n=>n.ticker===e.target);
+    if(!a||!b)return;
+    ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(255,255,255,${e.corr*.1})`;ctx.lineWidth=.7;ctx.stroke();
   });
-
-  // Weight comparison (horizontal bar)
-  const sorted = [...data.positions].sort((a,b) => a.cluster - b.cluster || b.hrp_weight - a.hrp_weight);
-  new Chart('weightCompare', {
-    type: 'bar',
-    data: {
-      labels: sorted.map(p => p.ticker),
-      datasets: [
-        {label:'Current', data:sorted.map(p=>p.current_weight*100), backgroundColor:'#555'},
-        {label:'HRP', data:sorted.map(p=>p.hrp_weight*100), backgroundColor: sorted.map(p=>COLORS[(p.cluster-1)%COLORS.length])},
-      ]
-    },
-    options: {
-      indexAxis:'y', responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{labels:{color:'#8899AA',font:{size:11}}}},
-      scales:{x:{ticks:{color:'#666',callback:v=>v+'%'},grid:{color:'#1A2030'}},y:{ticks:{color:'#888',font:{size:9}}}}
-    }
+  // Nodes
+  nodes.forEach(n=>{
+    const col=CL[(n.cluster-1)%CL.length];
+    // Glow
+    const g=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r*2);
+    g.addColorStop(0,col+'25');g.addColorStop(1,col+'00');
+    ctx.beginPath();ctx.arc(n.x,n.y,n.r*2,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+    // Circle
+    ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);ctx.fillStyle=col+'DD';ctx.fill();ctx.strokeStyle=col;ctx.lineWidth=2;ctx.stroke();
+    // Ticker
+    ctx.fillStyle='#fff';ctx.font=`600 ${Math.max(9,n.r*.55)}px 'JetBrains Mono',monospace`;ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.fillText(n.ticker,n.x,n.y);
+    // Weight
+    ctx.fillStyle='#ffffff88';ctx.font="9px 'JetBrains Mono',monospace";
+    ctx.fillText((n.current_weight*100).toFixed(1)+'%',n.x,n.y+n.r+11);
   });
-
-  // Trade table
-  const tbody = document.querySelector('#tradeTable tbody');
-  sorted.forEach(p => {
-    const isBuy = p.trade > 0;
-    const clColor = COLORS[(p.cluster-1)%COLORS.length];
-    tbody.innerHTML += `<tr>
-      <td style="font-family:'DM Sans';font-weight:500">${p.name}</td>
-      <td>${p.ticker}</td>
-      <td><span class="cluster-tag" style="background:${clColor}22;color:${clColor}">C${p.cluster}</span></td>
-      <td style="text-align:right">${(p.current_weight*100).toFixed(2)}%</td>
-      <td style="text-align:right">${(p.hrp_weight*100).toFixed(2)}%</td>
-      <td style="text-align:right" class="${isBuy?'buy':'sell'}">${isBuy?'BUY':'SELL'}</td>
-      <td style="text-align:right" class="${isBuy?'buy':'sell'}">${fmt(p.trade,'$')}</td>
-    </tr>`;
-  });
-
-  // Risk comparison table
-  const riskBody = document.querySelector('#riskTable tbody');
-  const metrics = [
-    ['Ann. Volatility','vol','%'],['Diversification','div','n'],
-    ['Effective Positions','eff_n','n'],['Max Weight','max_w','%'],['HHI','hhi','n'],
-  ];
-  metrics.forEach(([label,key,type]) => {
-    riskBody.innerHTML += `<tr>
-      <td style="font-family:'DM Sans'">${label}</td>
-      <td style="text-align:right">${fmt(data.risk_current[key],type)}</td>
-      <td style="text-align:right;color:#E8453C">${fmt(data.risk_hrp[key],type)}</td>
-      <td style="text-align:right;color:#3B82F6">${fmt(data.risk_equal[key],type)}</td>
-    </tr>`;
-  });
-
-  // === TECHNICAL VIEW ===
-
-  // Eigenvalues
-  const eigK = data.n_clusters;
-  new Chart('eigenChart', {
-    type:'bar',
-    data:{
-      labels: data.eigenvalues.map(e=>e.index),
-      datasets:[{data:data.eigenvalues.map(e=>e.value),
-        backgroundColor:data.eigenvalues.map(e=>e.index<=eigK?'#E8453C':'#2A2A3A'),
-        borderRadius:2}]
-    },
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false},
-        annotation:{annotations:{line:{type:'line',xMin:eigK+0.5,xMax:eigK+0.5,borderColor:'#F59E0B',borderDash:[5,5]}}}},
-      scales:{x:{ticks:{color:'#666',font:{size:9}},grid:{display:false}},y:{ticks:{color:'#666'},grid:{color:'#1A2030'}}}
-    }
-  });
-
-  // Sigma sweep
-  new Chart('sigmaChart', {
-    type:'line',
-    data:{
-      labels:data.sigma_sweep.map(s=>s.sigma.toFixed(3)),
-      datasets:[{data:data.sigma_sweep.map(s=>s.k), borderColor:'#E8453C', borderWidth:1.5, pointRadius:0, fill:false}]
-    },
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false}},
-      scales:{x:{ticks:{color:'#666',maxTicksLimit:8,font:{size:9}},title:{display:true,text:'sigma',color:'#666'}},
-              y:{ticks:{color:'#666'},title:{display:true,text:'k (clusters)',color:'#666'},grid:{color:'#1A2030'}}}
-    }
-  });
-
-  // Correlation matrix
-  const cm = data.correlation_matrix;
-  const cmCanvas = document.getElementById('corrMatrix');
-  const n = cm.tickers.length;
-  const cellSize = Math.max(12, Math.min(24, 500/n));
-  cmCanvas.width = n*cellSize; cmCanvas.height = n*cellSize;
-  const ctx = cmCanvas.getContext('2d');
-  for(let i=0;i<n;i++) for(let j=0;j<n;j++){
-    const v = cm.values[i][j];
-    const r = v>0 ? Math.round(180+75*v) : Math.round(180+75*v);
-    const b = v>0 ? Math.round(180-120*v) : Math.round(180+75*Math.abs(v));
-    const g = Math.round(180-100*Math.abs(v));
-    ctx.fillStyle = `rgb(${v>0?Math.min(255,r):Math.max(60,g)},${Math.max(60,g)},${v<0?Math.min(255,b):Math.max(60,g)})`;
-    ctx.fillRect(j*cellSize, i*cellSize, cellSize-1, cellSize-1);
-  }
-
-  // Market factor stats
-  const mf = data.market_factor;
-  document.getElementById('mfStats').innerHTML = `
-    <div style="margin-bottom:16px;color:#E8E6E3;font-size:14px;font-family:'DM Sans';font-weight:500">
-      Why we remove the market factor</div>
-    <div style="color:#8899AA;font-size:12px;line-height:1.8;font-family:'DM Sans';margin-bottom:20px">
-      Raw stock correlations are dominated by a single "market" factor &mdash; when the market goes up,
-      nearly everything goes up. This makes all stocks look similar. By regressing out the market return,
-      we reveal the <em>structural</em> relationships: which stocks co-move beyond what the market explains.
-    </div>
-    <div>Mean raw correlation: <span style="color:#E8453C">${mf.mean_raw_corr.toFixed(3)}</span></div>
-    <div>Mean residual correlation: <span style="color:#10B981">${mf.mean_residual_corr.toFixed(3)}</span></div>
-    <div>Variance explained by market: <span style="color:#F59E0B">${(mf.variance_explained*100).toFixed(1)}%</span></div>
-    <div style="margin-top:16px">kNN: <span style="color:#E8E6E3">${data.knn_k}</span></div>
-    <div>Sigma: <span style="color:#E8E6E3">${data.sigma.toFixed(4)}</span></div>
-    <div>Clusters (initial + re-cluster): <span style="color:#E8E6E3">${data.n_clusters}</span></div>
-    <div>Training universe: <span style="color:#E8E6E3">${data.n_training} stocks</span></div>
-  `;
-
-  // All clusters table
-  const ctBody = document.querySelector('#clusterTable tbody');
-  data.all_clusters.forEach(c => {
-    const yourPositions = data.positions.filter(p=>p.cluster===c.id).map(p=>p.ticker);
-    const topSectors = Object.entries(c.sectors).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([s,n])=>`${s} (${n})`).join(', ');
-    const clColor = COLORS[(c.id-1)%COLORS.length];
-    ctBody.innerHTML += `<tr>
-      <td><span class="cluster-tag" style="background:${clColor}22;color:${clColor}">C${c.id}</span></td>
-      <td>${c.size}</td>
-      <td style="font-family:'DM Sans';font-size:12px">${topSectors}</td>
-      <td style="font-size:12px">${yourPositions.length>0 ? yourPositions.join(', ') : '<span style="color:#555">-</span>'}</td>
-    </tr>`;
+  // Legend
+  const lg=document.getElementById('mapLegend');lg.innerHTML='';
+  const seen=new Set();
+  nodes.sort((a,b)=>a.cluster-b.cluster).forEach(n=>{
+    if(seen.has(n.cluster))return;seen.add(n.cluster);
+    const cl=D.all_clusters.find(c=>c.id===n.cluster);
+    lg.innerHTML+=`<div class="map-leg-item"><div class="map-leg-dot" style="background:${CL[(n.cluster-1)%CL.length]}"></div>C${n.cluster}: ${cl?cl.label:'?'}</div>`;
   });
 }
 
-// Tab switching
-document.querySelectorAll('.tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById('view-'+tab.dataset.view).classList.add('active');
-  });
-});
+function drawPies(){
+  const gr={};
+  D.positions.forEach(p=>{const k=`C${p.cluster} ${p.cluster_label}`;if(!gr[k])gr[k]={c:0,h:0,col:CL[(p.cluster-1)%CL.length]};gr[k].c+=p.current_weight;gr[k].h+=p.hrp_weight;});
+  const lb=Object.keys(gr);
+  const po={responsive:true,plugins:{legend:{position:'right',labels:{color:'#889',font:{size:10,family:'JetBrains Mono'},padding:6,boxWidth:10}},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw.toFixed(1)}%`}}}};
+  if(CH.pc)CH.pc.destroy();if(CH.ph)CH.ph.destroy();
+  CH.pc=new Chart('pieCur',{type:'pie',data:{labels:lb,datasets:[{data:lb.map(l=>gr[l].c*100),backgroundColor:lb.map(l=>gr[l].col),borderWidth:0}]},options:po});
+  CH.ph=new Chart('pieHRP',{type:'pie',data:{labels:lb,datasets:[{data:lb.map(l=>gr[l].h*100),backgroundColor:lb.map(l=>gr[l].col),borderWidth:0}]},options:po});
+}
 
+function drawRisk(){
+  const ac=D.cluster_risk.filter(c=>c.n_positions>0);
+  if(CH.rc)CH.rc.destroy();
+  CH.rc=new Chart('riskCl',{type:'bar',data:{labels:ac.map(c=>`C${c.cluster}`),datasets:[
+    {label:'Current',data:ac.map(c=>c.current_risk*100),backgroundColor:'#555',borderRadius:3},
+    {label:'HRP',data:ac.map(c=>c.hrp_risk*100),backgroundColor:'#E8453C',borderRadius:3}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#889',font:{size:10}}}},
+    scales:{x:{ticks:{color:'#666'}},y:{ticks:{color:'#666',callback:v=>v+'%'},grid:{color:'#1A2030'}}}}});
+}
+
+function drawWeight(){
+  const s=[...D.positions].sort((a,b)=>a.cluster-b.cluster||b.hrp_weight-a.hrp_weight);
+  if(CH.wc)CH.wc.destroy();
+  CH.wc=new Chart('wCmp',{type:'bar',data:{labels:s.map(p=>p.ticker),datasets:[
+    {label:'Current',data:s.map(p=>p.current_weight*100),backgroundColor:'#555'},
+    {label:'HRP',data:s.map(p=>p.hrp_weight*100),backgroundColor:s.map(p=>CL[(p.cluster-1)%CL.length])}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#889',font:{size:10}}}},
+    scales:{x:{ticks:{color:'#666',callback:v=>v+'%'},grid:{color:'#1A2030'}},y:{ticks:{color:'#888',font:{size:8}}}}}});
+}
+
+function fillTrades(){
+  const s=[...D.positions].sort((a,b)=>a.cluster-b.cluster||b.hrp_weight-a.hrp_weight);
+  document.getElementById('tradeTb').innerHTML=s.map(p=>{
+    const b=p.trade>0,col=CL[(p.cluster-1)%CL.length];
+    return`<tr><td style="font-family:'DM Sans';font-weight:500">${p.name}</td><td>${p.ticker}</td>
+    <td><span class="badge" style="background:${col}18;color:${col}">C${p.cluster}</span></td>
+    <td class="r">${pct(p.current_weight)}</td><td class="r">${pct(p.hrp_weight)}</td>
+    <td class="r ${b?'buy':'sell'}">${b?'BUY':'SELL'}</td><td class="r ${b?'buy':'sell'}">${dol(p.trade)}</td></tr>`;
+  }).join('');
+}
+
+function fillRiskTbl(){
+  const rows=[['Ann. Volatility','vol','%'],['Diversification','div','x'],['Effective Positions','eff_n','n'],['Max Weight','max_w','%'],['HHI','hhi','d']];
+  document.getElementById('riskTb').innerHTML=rows.map(([l,k,t])=>{
+    const f=v=>t==='%'?pct(v):t==='x'?v.toFixed(3):t==='n'?v.toFixed(1):v.toFixed(4);
+    return`<tr><td style="font-family:'DM Sans'">${l}</td><td class="r">${f(D.risk_current[k])}</td><td class="r" style="color:var(--red)">${f(D.risk_hrp[k])}</td><td class="r" style="color:var(--blue)">${f(D.risk_equal[k])}</td></tr>`;
+  }).join('');
+}
+
+// ===== EDITOR =====
+function buildEd(){renderEd();updatePreview();}
+
+function renderEd(){
+  document.getElementById('edRows').innerHTML=LP.map((p,i)=>{
+    const col=CL[(p.cluster-1)%CL.length];
+    return`<div class="ed-row"><div class="ed-tick">${p.ticker}</div><div class="ed-name">${p.name}</div>
+    <div class="ed-cl"><span class="badge" style="background:${col}18;color:${col}">${p.cluster}</span></div>
+    <input class="ed-input" type="number" min="0" value="${p.shares}" data-i="${i}" onchange="updSh(this)">
+    <div class="ed-val">${dol(p.shares*p.price)}</div>
+    <div style="width:20px;text-align:center;cursor:pointer;color:var(--t3)" onclick="rmPos(${i})">x</div></div>`;
+  }).join('');
+}
+
+function updSh(el){LP[+el.dataset.i].shares=Math.max(0,+el.value||0);renderEd();updatePreview();}
+function rmPos(i){LP.splice(i,1);renderEd();updatePreview();}
+
+function addPos(){
+  const t=document.getElementById('addT').value.trim().toUpperCase();
+  const nm=document.getElementById('addN').value.trim()||t;
+  const sh=+(document.getElementById('addS').value)||0;
+  if(!t)return;
+  const ex=D.positions.find(p=>p.ticker===t);
+  LP.push({ticker:t,name:nm,shares:sh,price:ex?ex.price:100,cluster:ex?ex.cluster:1,cluster_label:ex?ex.cluster_label:'Unknown',
+    current_value:0,current_weight:0,hrp_weight:ex?ex.hrp_weight:0,target_value:0,trade:0,vol:0,method:'manual'});
+  document.getElementById('addT').value='';document.getElementById('addN').value='';document.getElementById('addS').value='';
+  renderEd();updatePreview();
+}
+
+function resetPos(){LP=JSON.parse(JSON.stringify(D.positions));renderEd();updatePreview();}
+
+function updatePreview(){
+  const tot=LP.reduce((s,p)=>s+p.shares*p.price,0);if(tot<=0)return;
+  LP.forEach(p=>{p.current_value=p.shares*p.price;p.current_weight=p.current_value/tot;});
+  const gr={};LP.forEach(p=>{const k=`C${p.cluster} ${p.cluster_label}`;if(!gr[k])gr[k]={w:0,col:CL[(p.cluster-1)%CL.length]};gr[k].w+=p.current_weight;});
+  const lb=Object.keys(gr);
+  if(CH.pl)CH.pl.destroy();
+  CH.pl=new Chart('pieLive',{type:'pie',data:{labels:lb,datasets:[{data:lb.map(l=>gr[l].w*100),backgroundColor:lb.map(l=>gr[l].col),borderWidth:0}]},
+    options:{responsive:true,plugins:{legend:{position:'right',labels:{color:'#889',font:{size:9,family:'JetBrains Mono'},padding:5,boxWidth:10}},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw.toFixed(1)}%`}}}}});
+  const mx=Math.max(...LP.map(p=>p.current_weight));
+  document.getElementById('edSum').innerHTML=
+    `Total: <span style="color:var(--t1)">$${tot.toLocaleString('en-US',{maximumFractionDigits:0})}</span><br>`+
+    `Positions: <span style="color:var(--t1)">${LP.filter(p=>p.shares>0).length}</span><br>`+
+    `Max weight: <span style="color:${mx>.15?'var(--red)':'var(--green)'}">${(mx*100).toFixed(1)}%</span><br>`+
+    `Clusters: <span style="color:var(--t1)">${new Set(LP.filter(p=>p.shares>0).map(p=>p.cluster)).size}</span>`;
+}
+
+function recalc(){
+  const tot=LP.reduce((s,p)=>s+p.shares*p.price,0);if(tot<=0)return;
+  LP.forEach(p=>{p.current_value=p.shares*p.price;p.current_weight=p.current_value/tot;});
+  const hs=LP.reduce((s,p)=>s+(p.hrp_weight||0),0);
+  if(hs>0)LP.forEach(p=>p.hrp_weight=(p.hrp_weight||0)/hs);
+  LP.forEach(p=>{p.target_value=p.hrp_weight*tot;p.trade=p.target_value-p.current_value;});
+  D.positions=JSON.parse(JSON.stringify(LP));D.total_value=tot;
+  buildDash();
+  document.querySelector('[data-v="dash"]').click();
+}
+
+// ===== TECHNICAL =====
+function buildTech(){
+  new Chart('eigCh',{type:'bar',data:{labels:D.eigenvalues.map(e=>e.index),
+    datasets:[{data:D.eigenvalues.map(e=>e.value),backgroundColor:D.eigenvalues.map(e=>e.index<=6?'#E8453C':'#2A2A3A'),borderRadius:2}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{x:{ticks:{color:'#666',font:{size:8}}},y:{ticks:{color:'#666'},grid:{color:'#1A2030'}}}}});
+
+  new Chart('sigCh',{type:'line',data:{labels:D.sigma_sweep.map(s=>s.sigma.toFixed(3)),
+    datasets:[{data:D.sigma_sweep.map(s=>s.k),borderColor:'#E8453C',borderWidth:1.5,pointRadius:0,fill:false}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{x:{ticks:{color:'#666',maxTicksLimit:8,font:{size:8}},title:{display:true,text:'sigma',color:'#666'}},
+            y:{ticks:{color:'#666'},title:{display:true,text:'k',color:'#666'},grid:{color:'#1A2030'}}}}});
+
+  // Corr matrix
+  const cm=D.correlation_matrix,n=cm.tickers.length,cs=Math.max(14,Math.min(22,500/n));
+  const cv=document.getElementById('corrCv');cv.width=n*cs+60;cv.height=n*cs;cv.style.width=(n*cs+60)+'px';
+  const cx=cv.getContext('2d');
+  for(let i=0;i<n;i++)for(let j=0;j<n;j++){
+    const v=cm.values[i][j];
+    cx.fillStyle=v>=0?`rgb(${Math.min(255,180+75*v)},${Math.max(60,180-100*v)},${Math.max(60,180-120*v)})`
+      :`rgb(${Math.max(60,180+75*v)},${Math.max(60,180+50*v)},${Math.min(255,180-75*v)})`;
+    cx.fillRect(60+j*cs,i*cs,cs-1,cs-1);
+  }
+  cx.fillStyle='#889';cx.font="9px 'JetBrains Mono'";cx.textAlign='right';cx.textBaseline='middle';
+  for(let i=0;i<n;i++)cx.fillText(cm.tickers[i],56,i*cs+cs/2);
+
+  // Market factor
+  const mf=D.market_factor;
+  document.getElementById('mfInfo').innerHTML=`
+    <div style="color:var(--t1);font-family:'DM Sans';font-weight:600;font-size:14px;margin-bottom:10px">Why remove the market factor?</div>
+    <div style="color:var(--t2);font-size:12px;line-height:1.7;font-family:'DM Sans';margin-bottom:20px">
+      Raw correlations are dominated by beta. When the market rises, nearly everything rises. By regressing out the equal-weighted market return, we expose the structural co-movements that actually drive diversification.</div>
+    <div style="font:13px/2.4 'JetBrains Mono',monospace">
+      Mean raw correlation: <span style="color:var(--red)">${mf.mean_raw_corr.toFixed(3)}</span><br>
+      Mean residual correlation: <span style="color:var(--green)">${mf.mean_residual_corr.toFixed(3)}</span><br>
+      Variance explained by market: <span style="color:var(--amber)">${(mf.variance_explained*100).toFixed(1)}%</span><br>
+      kNN: <span style="color:var(--t1)">${D.knn_k}</span> | Sigma: <span style="color:var(--t1)">${D.sigma.toFixed(4)}</span><br>
+      Training universe: <span style="color:var(--t1)">${D.n_training} stocks</span><br>
+      Final clusters: <span style="color:var(--t1)">${D.n_clusters}</span> (after hierarchical re-clustering)</div>`;
+
+  // Cluster table
+  document.getElementById('clTb').innerHTML=D.all_clusters.map(c=>{
+    const yours=D.positions.filter(p=>p.cluster===c.id).map(p=>p.ticker);
+    const ts=Object.entries(c.sectors).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([s,n])=>`${s}(${n})`).join(', ');
+    const ms=Object.entries(c.markets).map(([m,n])=>`${m}:${n}`).join(', ');
+    const col=CL[(c.id-1)%CL.length];
+    return`<tr><td><span class="badge" style="background:${col}18;color:${col}">C${c.id}</span></td>
+      <td>${c.size}</td><td style="font-family:'DM Sans';font-size:11px">${ts}</td>
+      <td style="font-size:10px;color:var(--t2)">${ms}</td>
+      <td>${yours.length?yours.join(', '):'<span style="color:#333">—</span>'}</td></tr>`;
+  }).join('');
+}
+
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.vw').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');document.getElementById('v-'+t.dataset.v).classList.add('on');
+}));
 init();
 </script>
 </body>
